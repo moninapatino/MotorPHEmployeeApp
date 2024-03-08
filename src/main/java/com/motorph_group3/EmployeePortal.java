@@ -2,10 +2,7 @@
 package com.motorph_group3;
 
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.Toolkit;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.WindowConstants;
@@ -14,12 +11,11 @@ import javax.swing.*;
 
 
 public class EmployeePortal extends javax.swing.JFrame {
-    //private ImageIcon img = null;
+    
     
     public EmployeePortal() {
         initComponents();
         setTitle ("Employee Portal");
-        //setSize(700, 550);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         Toolkit toolkit=getToolkit();

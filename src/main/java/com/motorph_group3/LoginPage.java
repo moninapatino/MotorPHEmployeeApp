@@ -1,15 +1,26 @@
 
 package com.motorph_group3;
 
+import com.motorph_util.Postgresql;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.*;
 
 
 public class LoginPage extends javax.swing.JFrame {
-
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    
+    String url = "jdbc:postgresql://localhost:5432/postgres";
+    String user = "postgres";
+    String password = "admin";
    
     public LoginPage() {
         initComponents();
@@ -21,6 +32,7 @@ public class LoginPage extends javax.swing.JFrame {
         Dimension size=toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
         
+        conn = Postgresql.java_db();
     }
 
   
@@ -127,21 +139,46 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void logInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInButtonActionPerformed
         // login action
-        if (userIDText.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please Fill Out User ID");
+        String username = userIDText.getText();
+        String password1 = passwordText.getText();
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(url,user,password);
+            String sql = "SELECT * FROM public.mph_employeedata WHERE username= ? and password=?";
             
-        }else if(!passwordText.getText().equals(""))
-            if(userIDText.getText().contains("Admin") && passwordText.getText().contains("12345qwerty")) {
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password1);
+            rs=pst.executeQuery();
+            
+            while(rs.next())
+            
+            if(rs.next()){
+               EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal ();
+               employeeAccessPortal.show();
+                
+                dispose(); 
+            }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("12345qwerty")) {
                 JOptionPane.showMessageDialog(null, "Log in Successful");
                 EmployeePortal employeePortal = new EmployeePortal ();
                 employeePortal.show();
-        } else{
-            JOptionPane.showMessageDialog(null, "Wrong User ID or Password");  
-        } 
-        else{   
-            JOptionPane.showMessageDialog(null, "Please Fill Out Password");
-        }
-    dispose();    
+                
+                dispose();
+                
+            }else if(userIDText.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Please Fill Out User ID");
+            
+            }else if(passwordText.getText().equals("")){
+               JOptionPane.showMessageDialog(null, "Please Fill Out Password");                 
+               
+            }else{
+                JOptionPane.showMessageDialog(null, "Wrong User ID or Password");  
+            } 
+                    
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage()); 
+            }
     }//GEN-LAST:event_logInButtonActionPerformed
 
   
