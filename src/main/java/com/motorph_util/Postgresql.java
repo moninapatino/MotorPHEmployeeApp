@@ -23,7 +23,7 @@ public class Postgresql {
             }
             System.out.println("Trying to connect");
             
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","admin");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","@dm1n");
             System.out.println("Connection Established Successful");
                         
             

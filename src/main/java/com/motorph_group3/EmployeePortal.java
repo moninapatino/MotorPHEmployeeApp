@@ -30,12 +30,12 @@ public class EmployeePortal extends javax.swing.JFrame {
     public final void time(){
     DateTimeFormatter times = DateTimeFormatter.ofPattern("hh:mm:ss a");
     LocalDateTime now =LocalDateTime.now();
-    dateAndTime.setText(times.format(now));
+    time.setText(times.format(now));
     }
       public final void date(){
-    DateTimeFormatter dates = DateTimeFormatter.ofPattern("MM/dd/YYYY");
+    DateTimeFormatter dates = DateTimeFormatter.ofPattern("MMMM d, y");
     LocalDateTime now =LocalDateTime.now();
-    dateAndTime1.setText(dates.format(now));
+    date.setText(dates.format(now));
     }
 
   
@@ -47,13 +47,13 @@ public class EmployeePortal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
-        dateAndTime = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
         employeeProfileButton = new javax.swing.JButton();
         leaveButton = new javax.swing.JButton();
         payrollButton = new javax.swing.JButton();
         attendanceButton = new javax.swing.JButton();
         logOutButton = new javax.swing.JButton();
-        dateAndTime1 = new javax.swing.JLabel();
+        time = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,7 +73,7 @@ public class EmployeePortal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(402, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,13 +84,14 @@ public class EmployeePortal extends javax.swing.JFrame {
         greetings.setForeground(new java.awt.Color(217, 217, 217));
         greetings.setText("Greetings!");
 
-        dateAndTime.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        dateAndTime.setForeground(new java.awt.Color(217, 217, 217));
-        dateAndTime.setText("Date and Time");
+        date.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(217, 217, 217));
+        date.setText("Date ");
 
         employeeProfileButton.setBackground(new java.awt.Color(29, 53, 87));
-        employeeProfileButton.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        employeeProfileButton.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         employeeProfileButton.setForeground(new java.awt.Color(217, 217, 217));
+        employeeProfileButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\profile.png")); // NOI18N
         employeeProfileButton.setText("Employee Profile");
         employeeProfileButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         employeeProfileButton.addActionListener(new java.awt.event.ActionListener() {
@@ -100,8 +101,9 @@ public class EmployeePortal extends javax.swing.JFrame {
         });
 
         leaveButton.setBackground(new java.awt.Color(29, 53, 87));
-        leaveButton.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        leaveButton.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         leaveButton.setForeground(new java.awt.Color(217, 217, 217));
+        leaveButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\leave.png")); // NOI18N
         leaveButton.setText("Leave Management");
         leaveButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         leaveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,8 +113,9 @@ public class EmployeePortal extends javax.swing.JFrame {
         });
 
         payrollButton.setBackground(new java.awt.Color(29, 53, 87));
-        payrollButton.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        payrollButton.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         payrollButton.setForeground(new java.awt.Color(217, 217, 217));
+        payrollButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\payroll.png")); // NOI18N
         payrollButton.setText("Payroll");
         payrollButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         payrollButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,8 +125,9 @@ public class EmployeePortal extends javax.swing.JFrame {
         });
 
         attendanceButton.setBackground(new java.awt.Color(29, 53, 87));
-        attendanceButton.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        attendanceButton.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         attendanceButton.setForeground(new java.awt.Color(217, 217, 217));
+        attendanceButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\attendance.png")); // NOI18N
         attendanceButton.setText("Attendance");
         attendanceButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         attendanceButton.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +145,9 @@ public class EmployeePortal extends javax.swing.JFrame {
             }
         });
 
-        dateAndTime1.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        dateAndTime1.setForeground(new java.awt.Color(217, 217, 217));
-        dateAndTime1.setText("Date and Time");
+        time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(217, 217, 217));
+        time.setText(" Time");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,31 +155,32 @@ public class EmployeePortal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(greetings)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(date)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(time)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(greetings)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(dateAndTime)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dateAndTime1)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(leaveButton)
-                                            .addComponent(employeeProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(43, 43, 43)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(attendanceButton, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                            .addComponent(payrollButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(284, 284, 284)
-                        .addComponent(logOutButton)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                        .addComponent(logOutButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(employeeProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(leaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(attendanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {attendanceButton, employeeProfileButton, leaveButton, payrollButton});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {employeeProfileButton, payrollButton});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,19 +190,19 @@ public class EmployeePortal extends javax.swing.JFrame {
                 .addComponent(greetings)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateAndTime)
-                    .addComponent(dateAndTime1))
-                .addGap(62, 62, 62)
+                    .addComponent(date)
+                    .addComponent(time))
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(employeeProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(payrollButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(attendanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                .addGap(61, 61, 61)
                 .addComponent(logOutButton)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,7 +213,7 @@ public class EmployeePortal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
         );
 
         pack();
@@ -291,8 +296,7 @@ public class EmployeePortal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton attendanceButton;
-    private javax.swing.JLabel dateAndTime;
-    private javax.swing.JLabel dateAndTime1;
+    private javax.swing.JLabel date;
     private javax.swing.JButton employeeProfileButton;
     private javax.swing.JLabel greetings;
     private javax.swing.JLabel jLabel1;
@@ -301,5 +305,6 @@ public class EmployeePortal extends javax.swing.JFrame {
     private javax.swing.JButton leaveButton;
     private javax.swing.JButton logOutButton;
     private javax.swing.JButton payrollButton;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

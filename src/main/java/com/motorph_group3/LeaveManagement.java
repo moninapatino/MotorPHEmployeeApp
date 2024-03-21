@@ -25,9 +25,9 @@ public class LeaveManagement extends javax.swing.JFrame {
     ResultSet rs = null;
     PreparedStatement pst = null;
           
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    String user = "postgres";
-    String password = "admin";
+    private static final String url = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String user = "postgres";
+    private static final String password = "@dm1n";
     
     public LeaveManagement() {
         initComponents();
@@ -49,12 +49,12 @@ public class LeaveManagement extends javax.swing.JFrame {
     public final void time(){
     DateTimeFormatter times = DateTimeFormatter.ofPattern("hh:mm:ss a");
     LocalDateTime now =LocalDateTime.now();
-    dateAndTime.setText(times.format(now));
+    time.setText(times.format(now));
     }
       public final void date(){
-    DateTimeFormatter dates = DateTimeFormatter.ofPattern("MM/dd/YYYY");
+    DateTimeFormatter dates = DateTimeFormatter.ofPattern("MMMM d, y");
     LocalDateTime now =LocalDateTime.now();
-    dateAndTime1.setText(dates.format(now));
+    date.setText(dates.format(now));
     }
     
     public ArrayList userList() {
@@ -75,12 +75,12 @@ public class LeaveManagement extends javax.swing.JFrame {
                 Vector v=new Vector();
                 for (int i=0;i<n;i++){
                     v.add(rs.getString("employee_id"));
-                    v.add(rs.getString("employee_name"));
+                    v.add(rs.getString("first_name"));
+                    v.add(rs.getString("last_name"));
                     v.add(rs.getString("date"));
                     v.add(rs.getString("leave_type"));
                     v.add(rs.getString("status"));
                                     
-                
                 }
                 leave_table.addRow(v);
             }    
@@ -102,13 +102,13 @@ public class LeaveManagement extends javax.swing.JFrame {
         darkbluepanel = new javax.swing.JPanel();
         leave_title = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
-        dateAndTime = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
         noe_title1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         leaveTable = new javax.swing.JTable();
         id_field = new javax.swing.JTextField();
-        dateAndTime1 = new javax.swing.JLabel();
+        time = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 450));
@@ -145,9 +145,9 @@ public class LeaveManagement extends javax.swing.JFrame {
         greetings.setForeground(new java.awt.Color(217, 217, 217));
         greetings.setText("Greetings!");
 
-        dateAndTime.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        dateAndTime.setForeground(new java.awt.Color(217, 217, 217));
-        dateAndTime.setText("Date ");
+        date.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(217, 217, 217));
+        date.setText("Date ");
 
         backButton.setBackground(new java.awt.Color(29, 53, 87));
         backButton.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
@@ -159,26 +159,34 @@ public class LeaveManagement extends javax.swing.JFrame {
             }
         });
 
-        noe_title1.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        noe_title1.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
         noe_title1.setForeground(new java.awt.Color(217, 217, 217));
         noe_title1.setText("Employee ID :");
 
         leaveTable.setBackground(new java.awt.Color(217, 217, 217));
+        leaveTable.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         leaveTable.setForeground(new java.awt.Color(29, 53, 87));
         leaveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Employee ID", "Employee Name", "Date", "Leave Type", "Status"
+                "Employee ID", "First Name", "Last Name", "Date", "Leave Type", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(leaveTable);
@@ -192,9 +200,9 @@ public class LeaveManagement extends javax.swing.JFrame {
             }
         });
 
-        dateAndTime1.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        dateAndTime1.setForeground(new java.awt.Color(217, 217, 217));
-        dateAndTime1.setText("Time");
+        time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(217, 217, 217));
+        time.setText("Time");
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -213,9 +221,9 @@ public class LeaveManagement extends javax.swing.JFrame {
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(greetings)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(dateAndTime)
+                                .addComponent(date)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dateAndTime1)))
+                                .addComponent(time)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(369, 369, 369))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
@@ -236,8 +244,8 @@ public class LeaveManagement extends javax.swing.JFrame {
                 .addComponent(greetings)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateAndTime)
-                    .addComponent(dateAndTime1))
+                    .addComponent(date)
+                    .addComponent(time))
                 .addGap(30, 30, 30)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noe_title1)
@@ -278,7 +286,9 @@ public class LeaveManagement extends javax.swing.JFrame {
         TableRowSorter<DefaultTableModel> table=new TableRowSorter<>(attendanceTable);
         leaveTable.setRowSorter(table);
         table.setRowFilter(RowFilter.regexFilter(id_field.getText()));
-        
+        if(leaveTable.getRowCount() ==0) {
+        JOptionPane.showMessageDialog(this, "This Employee has no Leave Record yet.");
+        }
     }//GEN-LAST:event_id_fieldKeyReleased
 
     /**
@@ -319,8 +329,7 @@ public class LeaveManagement extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JPanel darkbluepanel;
-    private javax.swing.JLabel dateAndTime;
-    private javax.swing.JLabel dateAndTime1;
+    private javax.swing.JLabel date;
     private javax.swing.JLabel greetings;
     private javax.swing.JTextField id_field;
     private javax.swing.JScrollPane jScrollPane1;
@@ -328,5 +337,6 @@ public class LeaveManagement extends javax.swing.JFrame {
     private javax.swing.JLabel leave_title;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel noe_title1;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

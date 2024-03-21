@@ -4,6 +4,7 @@ package com.motorph_group3;
 import com.motorph_util.Postgresql;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,12 +21,11 @@ public class LoginPage extends javax.swing.JFrame {
     
     String url = "jdbc:postgresql://localhost:5432/postgres";
     String user = "postgres";
-    String password = "admin";
+    String password = "@dm1n";
    
     public LoginPage() {
         initComponents();
         setTitle ("Motor PH Employee Portal");
-        setSize(700, 550);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         Toolkit toolkit=getToolkit();
@@ -34,6 +34,8 @@ public class LoginPage extends javax.swing.JFrame {
         
         conn = Postgresql.java_db();
     }
+    
+   
 
   
     @SuppressWarnings("unchecked")
@@ -71,6 +73,11 @@ public class LoginPage extends javax.swing.JFrame {
         passwordText.setBackground(new java.awt.Color(217, 217, 217));
         passwordText.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         passwordText.setForeground(new java.awt.Color(29, 53, 87));
+        passwordText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordTextKeyPressed(evt);
+            }
+        });
 
         logInButton.setBackground(new java.awt.Color(217, 217, 217));
         logInButton.setForeground(new java.awt.Color(29, 53, 87));
@@ -145,20 +152,19 @@ public class LoginPage extends javax.swing.JFrame {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url,user,password);
-            String sql = "SELECT * FROM public.mph_employeedata WHERE username= ? and password=?";
+            String sql = "SELECT * FROM public.mph_employee_data WHERE username =? and password =?";
             
             pst=conn.prepareStatement(sql);
             pst.setString(1, username);
             pst.setString(2, password1);
             rs=pst.executeQuery();
-            
-            while(rs.next())
-            
+                                  
             if(rs.next()){
-               EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal ();
-               employeeAccessPortal.show();
+                EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal (username);
+                employeeAccessPortal.setVisible(true);
                 
-                dispose(); 
+                setVisible(false);
+                
             }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("12345qwerty")) {
                 JOptionPane.showMessageDialog(null, "Log in Successful");
                 EmployeePortal employeePortal = new EmployeePortal ();
@@ -180,6 +186,52 @@ public class LoginPage extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, ex.getMessage()); 
             }
     }//GEN-LAST:event_logInButtonActionPerformed
+
+    private void passwordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){ 
+        
+        String username = userIDText.getText();
+        String password1 = passwordText.getText();
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(url,user,password);
+            String sql = "SELECT * FROM public.mph_employee_data WHERE username =? and password =?";
+            
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password1);
+            rs=pst.executeQuery();
+                                  
+            if(rs.next()){
+                EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal (username);
+                employeeAccessPortal.setVisible(true);
+                
+                setVisible(false);
+                
+            }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("12345qwerty")) {
+                JOptionPane.showMessageDialog(null, "Log in Successful");
+                EmployeePortal employeePortal = new EmployeePortal ();
+                employeePortal.show();
+                
+                dispose();
+                
+            }else if(userIDText.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Please Fill Out User ID");
+            
+            }else if(passwordText.getText().equals("")){
+               JOptionPane.showMessageDialog(null, "Please Fill Out Password");                 
+               
+            }else{
+                JOptionPane.showMessageDialog(null, "Wrong User ID or Password");  
+            } 
+                    
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage()); 
+            }
+        }
+    }//GEN-LAST:event_passwordTextKeyPressed
 
   
     public static void main(String args[]) {
@@ -218,7 +270,7 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logInButton;
     private javax.swing.JLabel motorPhTitle;
-    private javax.swing.JPasswordField passwordText;
+    public javax.swing.JPasswordField passwordText;
     private javax.swing.JLabel titlePassword;
     private javax.swing.JLabel titleUserID;
     private javax.swing.JTextField userIDText;
