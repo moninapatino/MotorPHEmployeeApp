@@ -360,7 +360,7 @@ public class EmpAccessLeave extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // add data to sql
         String leaveType = "";
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, y");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, y");
         String fDate = dateFormat.format(date_chooser.getDate());
         
         DefaultTableModel model = (DefaultTableModel)leaveTable.getModel();
