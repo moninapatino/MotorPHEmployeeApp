@@ -235,10 +235,22 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
 
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
         // log out
+        String username="";
+        
+        int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to Log Out?", "Employee Portal", JOptionPane.YES_NO_OPTION);
+        
+        if (result == JOptionPane.YES_OPTION){
+        
         LoginPage loginPage = new LoginPage();
         loginPage.show();
-
+                
         dispose();
+        } else if (result == JOptionPane.NO_OPTION){
+        EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal (username);
+        employeeAccessPortal.setVisible(true);
+                
+        setVisible(false);   
+        }
     }//GEN-LAST:event_logOutButtonActionPerformed
 
     private void leave_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leave_btnActionPerformed

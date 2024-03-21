@@ -767,6 +767,7 @@ public class Payroll extends javax.swing.JFrame {
         tax1_radio.setSelected(false);
         tax2_radio.setSelected(false);
         tax3_radio.setSelected(false);
+        paySlipArea.setText("");
         
         
                 
@@ -818,6 +819,7 @@ public class Payroll extends javax.swing.JFrame {
         paySlipArea.setText(paySlipArea.getText()+"*******************************************\n");
         
         paySlipArea.setText(paySlipArea.getText()+"Date : "+date.getText()+"\n");
+        paySlipArea.setText(paySlipArea.getText()+"Time : "+time.getText()+"\n");
         paySlipArea.setText(paySlipArea.getText()+"Employee First Name : "+ename_field.getText()+"\n");
         paySlipArea.setText(paySlipArea.getText()+"Employee Last Name : "+ename_field1.getText()+"\n");
         paySlipArea.setText(paySlipArea.getText()+"Employee ID : "+employeeid_field.getText()+"\n");
