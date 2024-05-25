@@ -1,1 +1,1 @@
-# MO-IT101-Group3
+# MotorPH Employee App GUI
