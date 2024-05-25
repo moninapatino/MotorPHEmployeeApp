@@ -1,7 +1,7 @@
 
 package com.motorph_util;
+
 import java.sql.*;
-import javax.swing.*;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.util.logging.Level;
