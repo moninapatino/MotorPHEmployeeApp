@@ -9,9 +9,6 @@ import javax.swing.WindowConstants;
 import javax.swing.JOptionPane;
 
 
-
-
-
 public class EmployeePortal extends javax.swing.JFrame {
     
     
