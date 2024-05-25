@@ -12,12 +12,10 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Vector;
-import javax.swing.RowFilter;
-import javax.swing.table.TableRowSorter;
+
 
 
 public class LeaveManagement extends javax.swing.JFrame {
@@ -33,7 +31,7 @@ public class LeaveManagement extends javax.swing.JFrame {
         initComponents();
         
         setTitle ("Motor PH Employee Leave Management");
-        setSize(700, 600);
+        setSize(780, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         Toolkit toolkit=getToolkit();
@@ -179,7 +177,7 @@ public class LeaveManagement extends javax.swing.JFrame {
             .addGroup(darkbluepanelLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(leave_title)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         darkbluepanelLayout.setVerticalGroup(
             darkbluepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,11 +245,6 @@ public class LeaveManagement extends javax.swing.JFrame {
         id_field.setBackground(new java.awt.Color(217, 217, 217));
         id_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         id_field.setForeground(new java.awt.Color(29, 53, 87));
-        id_field.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                id_fieldKeyReleased(evt);
-            }
-        });
 
         time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         time.setForeground(new java.awt.Color(217, 217, 217));
@@ -325,14 +318,14 @@ public class LeaveManagement extends javax.swing.JFrame {
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(darkbluepanel, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+            .addComponent(darkbluepanel, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane1))
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(542, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(backButton)
                             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -378,7 +371,7 @@ public class LeaveManagement extends javax.swing.JFrame {
                                 .addComponent(approve_rb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(reject_rb)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +417,9 @@ public class LeaveManagement extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,23 +437,10 @@ public class LeaveManagement extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void id_fieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_fieldKeyReleased
-        // search from table
-        /*
-        DefaultTableModel leaveRecord = (DefaultTableModel)leaveTable.getModel();
-        TableRowSorter<DefaultTableModel> table=new TableRowSorter<>(leaveRecord);
-        leaveTable.setRowSorter(table);
-        table.setRowFilter(RowFilter.regexFilter(id_field.getText()));
-        if(leaveTable.getRowCount() ==0) {
-        JOptionPane.showMessageDialog(this, "This Employee has no Leave Record yet.");
-        }*/
-    }//GEN-LAST:event_id_fieldKeyReleased
-
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // Update data to SQL
         try {
             
-            String date = date_field.getText();
             String status = "";
             if (approve_rb.isSelected()){
                status = "Approved";
@@ -469,11 +451,11 @@ public class LeaveManagement extends javax.swing.JFrame {
             
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url,user,password);
-            pst=conn.prepareStatement("UPDATE public.leave_record SET date ='"+date+"', status ='"+status+"' WHERE employee_id =?");
-            
+            pst=conn.prepareStatement("UPDATE public.leave_record SET status ='"+status+"' WHERE employee_id =?");
             
             pst.setString(1, id_field.getText());
             pst.execute();
+            
             
             DefaultTableModel leaveRecord1 = (DefaultTableModel)leaveTable.getModel();
             int i = leaveTable.getSelectedRow();
@@ -484,6 +466,10 @@ public class LeaveManagement extends javax.swing.JFrame {
                     reject_rb.setSelected(false);
                 }
                 else{
+                    reject_rb.setSelected(false);
+                    approve_rb.setSelected(false);
+                    
+                }if (statusRB.equals("Rejected")){
                     reject_rb.setSelected(true);
                     approve_rb.setSelected(false);
                 }        
@@ -516,7 +502,11 @@ public class LeaveManagement extends javax.swing.JFrame {
             else{
                 reject_rb.setSelected(true);
                 approve_rb.setSelected(false);
-                }
+            }
+            if (statusRB.equals("")){
+                reject_rb.setSelected(false);
+                approve_rb.setSelected(false);
+            }
                     
         } catch (Exception e){
 

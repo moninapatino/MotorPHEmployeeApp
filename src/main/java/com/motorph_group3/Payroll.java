@@ -8,15 +8,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Vector;
 import javax.swing.WindowConstants;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-//import javax.swing.*;
+
 
 
 

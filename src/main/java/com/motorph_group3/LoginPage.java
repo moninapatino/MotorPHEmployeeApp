@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
-import javax.swing.*;
+
 
 
 public class LoginPage extends javax.swing.JFrame {
@@ -165,7 +165,7 @@ public class LoginPage extends javax.swing.JFrame {
                 
                 setVisible(false);
                 
-            }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("12345qwerty")) {
+            }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("123")) {
                 JOptionPane.showMessageDialog(null, "Log in Successful");
                 EmployeePortal employeePortal = new EmployeePortal ();
                 employeePortal.show();
@@ -188,7 +188,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_logInButtonActionPerformed
 
     private void passwordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordTextKeyPressed
-        // TODO add your handling code here:
+        // PRESSING ENTER FUNCTION
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){ 
         
         String username = userIDText.getText();

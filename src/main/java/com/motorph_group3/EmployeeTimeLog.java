@@ -8,8 +8,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +28,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
     private static final String url = "jdbc:postgresql://localhost:5432/postgres";
     private static final String user = "postgres";
     private static final String password = "@dm1n";
+       
     
     public EmployeeTimeLog() {
         initComponents();
@@ -42,6 +46,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
         time();
         date();
         
+        
     }
 
     public final void time(){
@@ -54,9 +59,42 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
     LocalDateTime now =LocalDateTime.now();
     date.setText(dates.format(now));
     }
-       
-    
-      
+            
+     public ArrayList timeLog() {
+        ArrayList timeLog = new ArrayList();
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection conn = DriverManager.getConnection(url,user,password);
+            String sql = "SELECT * FROM public.employeetime_log where employee_id=?";
+            pst= conn.prepareStatement(sql);
+            pst.setString(1, id_field.getText());
+            rs = pst.executeQuery();
+            
+            ResultSetMetaData rsmd=rs.getMetaData();
+            int n=rsmd.getColumnCount();
+            
+            DefaultTableModel leave_table = (DefaultTableModel)attendance_table.getModel();
+            leave_table.setRowCount(0);
+            while(rs.next()){
+                Vector v=new Vector();
+                for (int i=0;i<n;i++){
+                    
+                    v.add(rs.getString("first_name"));
+                    v.add(rs.getString("last_name"));
+                    v.add(rs.getString("date"));
+                    v.add(rs.getString("time_in"));
+                    v.add(rs.getString("time_out"));
+                                    
+                }
+                leave_table.addRow(v);
+            }    
+        } 
+        catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }  
+        return timeLog;
+        
+     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -312,7 +350,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
                 String lastName =rs.getString("last_name");
                 lastName_field.setText(lastName);
                                                              
-                         
+                timeLog();         
             }
        }
         catch (Exception ex) {
@@ -432,6 +470,8 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
                 new EmployeeTimeLog().setVisible(true);
             }
         });
+        
+            
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -453,4 +493,8 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
     private javax.swing.JButton timeInBtn;
     private javax.swing.JButton timeOutBtn;
     // End of variables declaration//GEN-END:variables
-}
+ }
+
+
+
+

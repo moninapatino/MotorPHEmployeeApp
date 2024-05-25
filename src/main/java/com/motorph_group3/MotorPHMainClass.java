@@ -4,7 +4,7 @@ import com.motorph_util.Postgresql;
 import java.sql.Connection;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import javax.swing.*;
+
 
 
 public class MotorPHMainClass extends JFrame {

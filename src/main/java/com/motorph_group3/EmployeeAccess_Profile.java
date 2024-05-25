@@ -10,7 +10,7 @@ import javax.swing.WindowConstants;
 import com.motorph_util.Postgresql;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
-import javax.swing.*;
+
 
 public class EmployeeAccess_Profile extends javax.swing.JFrame {
 
@@ -20,7 +20,7 @@ public class EmployeeAccess_Profile extends javax.swing.JFrame {
     
     String url = "jdbc:postgresql://localhost:5432/postgres";
     String user = "postgres";
-    String password = "admin";
+    String password = "@dm1n";
     
     public EmployeeAccess_Profile() {
         initComponents();
@@ -145,6 +145,7 @@ public class EmployeeAccess_Profile extends javax.swing.JFrame {
         bday_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         bday_field.setForeground(new java.awt.Color(29, 53, 87));
 
+        contact_field.setEditable(false);
         contact_field.setBackground(new java.awt.Color(217, 217, 217));
         contact_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         contact_field.setForeground(new java.awt.Color(29, 53, 87));
@@ -387,10 +388,7 @@ public class EmployeeAccess_Profile extends javax.swing.JFrame {
 
     private void employeeNumber_fieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_employeeNumber_fieldKeyReleased
         // type employee number
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "@dm1n";
-
+        
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url,user,password);

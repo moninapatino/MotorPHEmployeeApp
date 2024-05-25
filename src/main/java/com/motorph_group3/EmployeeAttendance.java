@@ -216,11 +216,6 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         hoursworked_field.setEditable(false);
         hoursworked_field.setBackground(new java.awt.Color(217, 217, 217));
         hoursworked_field.setForeground(new java.awt.Color(29, 53, 87));
-        hoursworked_field.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                hoursworked_fieldKeyReleased(evt);
-            }
-        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -322,12 +317,8 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         table.setRowFilter(RowFilter.regexFilter(id_field.getText()));
     }//GEN-LAST:event_id_fieldKeyReleased
 
-    private void hoursworked_fieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hoursworked_fieldKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hoursworked_fieldKeyReleased
-
     private void payPeriodComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payPeriodComboBoxActionPerformed
-        // TODO add your handling code here:
+        // Pay Period Function
          try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url,user,password);

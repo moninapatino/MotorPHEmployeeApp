@@ -3,25 +3,14 @@ package com.motorph_group3;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.WindowConstants;
-import com.motorph_util.Postgresql;
-import java.sql.DriverManager;
 import javax.swing.*;
 
 
 public class EmployeeAccessPortal extends javax.swing.JFrame {
-    Connection conn = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
-    
-    String url = "jdbc:postgresql://localhost:5432/postgres";
-    String user = "postgres";
-    String password = "admin";
+   
     
     public EmployeeAccessPortal(String dUsername) {
         initComponents();
@@ -32,8 +21,6 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
         Dimension size=toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
         
-        
-        conn = Postgresql.java_db();
         
         //Displaying date and Time
         time();

@@ -9,11 +9,10 @@ import java.sql.ResultSet;
 import javax.swing.WindowConstants;
 import com.motorph_util.Postgresql;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
-import javax.swing.*;
+
 
 
 public class EmployeeProfile extends javax.swing.JFrame {
