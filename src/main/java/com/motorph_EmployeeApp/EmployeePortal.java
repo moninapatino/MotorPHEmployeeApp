@@ -64,9 +64,9 @@ public class EmployeePortal extends javax.swing.JFrame {
         date.setText("Date ");
 
         logOutButton.setBackground(new java.awt.Color(253, 56, 29));
-        logOutButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logOutButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(217, 217, 217));
-        logOutButton.setText("Log out");
+        logOutButton.setText("LOG OUT");
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logOutButtonActionPerformed(evt);
@@ -109,7 +109,7 @@ public class EmployeePortal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(202, Short.MAX_VALUE)
+                .addContainerGap(143, Short.MAX_VALUE)
                 .addComponent(empPortal_title, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logo)
@@ -209,7 +209,7 @@ public class EmployeePortal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
             .addComponent(bluePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

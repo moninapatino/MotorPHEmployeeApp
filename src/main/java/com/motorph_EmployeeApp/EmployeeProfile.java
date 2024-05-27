@@ -27,7 +27,6 @@ public class EmployeeProfile extends javax.swing.JFrame {
     public EmployeeProfile(){
         initComponents();
         setTitle ("Motor PH Employee Profile");
-        setSize (700,600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         Toolkit toolkit=getToolkit();
@@ -61,6 +60,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        LOGO = new javax.swing.JLabel();
         noe_title = new javax.swing.JLabel();
         b_title = new javax.swing.JLabel();
         cn_title = new javax.swing.JLabel();
@@ -92,32 +92,35 @@ public class EmployeeProfile extends javax.swing.JFrame {
         addBtn = new javax.swing.JButton();
         address_title = new javax.swing.JLabel();
         address_field = new javax.swing.JTextField();
-        LOGO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainPanel.setBackground(new java.awt.Color(250, 250, 255));
-        mainPanel.setForeground(new java.awt.Color(69, 123, 157));
+        mainPanel.setBackground(new java.awt.Color(30, 43, 93));
+        mainPanel.setForeground(new java.awt.Color(30, 43, 93));
 
         greetings.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        greetings.setForeground(new java.awt.Color(92, 101, 138));
+        greetings.setForeground(new java.awt.Color(250, 250, 255));
         greetings.setText("Greetings!");
 
-        jPanel1.setBackground(new java.awt.Color(30, 43, 93));
+        jPanel1.setBackground(new java.awt.Color(250, 250, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(256, 70));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(217, 217, 217));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(92, 101, 138));
         jLabel1.setText("EMPLOYEE PROFILE");
+
+        LOGO.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGap(20, 20, 20)
+                .addComponent(LOGO)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(178, 178, 178))
         );
@@ -127,97 +130,105 @@ public class EmployeeProfile extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addComponent(LOGO)
+                        .addGap(11, 11, 11)))
+                .addContainerGap())
         );
 
         noe_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        noe_title.setForeground(new java.awt.Color(92, 101, 138));
+        noe_title.setForeground(new java.awt.Color(250, 250, 255));
         noe_title.setText("First Name :");
 
         b_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        b_title.setForeground(new java.awt.Color(92, 101, 138));
+        b_title.setForeground(new java.awt.Color(250, 250, 255));
         b_title.setText("Birthday :");
 
         cn_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        cn_title.setForeground(new java.awt.Color(92, 101, 138));
+        cn_title.setForeground(new java.awt.Color(250, 250, 255));
         cn_title.setText("Contact Number:");
 
         en_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        en_title.setForeground(new java.awt.Color(92, 101, 138));
+        en_title.setForeground(new java.awt.Color(250, 250, 255));
         en_title.setText("Employee Number :");
 
         jt_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jt_title.setForeground(new java.awt.Color(92, 101, 138));
+        jt_title.setForeground(new java.awt.Color(250, 250, 255));
         jt_title.setText("Job Title :");
 
         s_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        s_title.setForeground(new java.awt.Color(92, 101, 138));
+        s_title.setForeground(new java.awt.Color(250, 250, 255));
         s_title.setText("Status :");
 
-        name_field.setBackground(new java.awt.Color(30, 43, 93));
+        name_field.setBackground(new java.awt.Color(250, 250, 255));
         name_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        name_field.setForeground(new java.awt.Color(250, 250, 255));
+        name_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        bday_field.setBackground(new java.awt.Color(30, 43, 93));
+        bday_field.setBackground(new java.awt.Color(250, 250, 255));
         bday_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        bday_field.setForeground(new java.awt.Color(250, 250, 255));
+        bday_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        contact_field.setBackground(new java.awt.Color(30, 43, 93));
+        contact_field.setBackground(new java.awt.Color(250, 250, 255));
         contact_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        contact_field.setForeground(new java.awt.Color(250, 250, 255));
+        contact_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        employeeNumber_field.setBackground(new java.awt.Color(30, 43, 93));
+        employeeNumber_field.setBackground(new java.awt.Color(250, 250, 255));
         employeeNumber_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        employeeNumber_field.setForeground(new java.awt.Color(250, 250, 255));
+        employeeNumber_field.setForeground(new java.awt.Color(92, 101, 138));
         employeeNumber_field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 employeeNumber_fieldKeyReleased(evt);
             }
         });
 
-        jobTitle_field.setBackground(new java.awt.Color(30, 43, 93));
+        jobTitle_field.setBackground(new java.awt.Color(250, 250, 255));
         jobTitle_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jobTitle_field.setForeground(new java.awt.Color(250, 250, 255));
+        jobTitle_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        status_field.setBackground(new java.awt.Color(30, 43, 93));
+        status_field.setBackground(new java.awt.Color(250, 250, 255));
         status_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        status_field.setForeground(new java.awt.Color(250, 250, 255));
+        status_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        govIdNum_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        govIdNum_title.setForeground(new java.awt.Color(92, 101, 138));
+        govIdNum_title.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        govIdNum_title.setForeground(new java.awt.Color(250, 250, 255));
         govIdNum_title.setText("Government ID Numbers :");
 
         sss_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        sss_title.setForeground(new java.awt.Color(92, 101, 138));
+        sss_title.setForeground(new java.awt.Color(250, 250, 255));
         sss_title.setText("SSS Number :");
 
         pagibig_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        pagibig_title.setForeground(new java.awt.Color(92, 101, 138));
+        pagibig_title.setForeground(new java.awt.Color(250, 250, 255));
         pagibig_title.setText("PAG-IBIG Number :");
 
         phhealth_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        phhealth_title.setForeground(new java.awt.Color(92, 101, 138));
+        phhealth_title.setForeground(new java.awt.Color(250, 250, 255));
         phhealth_title.setText("PhilHealth Number :");
 
         tin_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        tin_title.setForeground(new java.awt.Color(92, 101, 138));
+        tin_title.setForeground(new java.awt.Color(250, 250, 255));
         tin_title.setText("TIN :");
 
-        sss_field.setBackground(new java.awt.Color(30, 43, 93));
+        sss_field.setBackground(new java.awt.Color(250, 250, 255));
         sss_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        sss_field.setForeground(new java.awt.Color(250, 250, 255));
+        sss_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        pagibig_field.setBackground(new java.awt.Color(30, 43, 93));
+        pagibig_field.setBackground(new java.awt.Color(250, 250, 255));
         pagibig_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        pagibig_field.setForeground(new java.awt.Color(250, 250, 255));
+        pagibig_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        phhealth_field.setBackground(new java.awt.Color(30, 43, 93));
+        phhealth_field.setBackground(new java.awt.Color(250, 250, 255));
         phhealth_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        phhealth_field.setForeground(new java.awt.Color(250, 250, 255));
+        phhealth_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        tin_field.setBackground(new java.awt.Color(30, 43, 93));
+        tin_field.setBackground(new java.awt.Color(250, 250, 255));
         tin_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tin_field.setForeground(new java.awt.Color(250, 250, 255));
+        tin_field.setForeground(new java.awt.Color(92, 101, 138));
 
         backButton.setBackground(new java.awt.Color(253, 56, 29));
         backButton.setForeground(new java.awt.Color(250, 250, 255));
@@ -239,19 +250,19 @@ public class EmployeeProfile extends javax.swing.JFrame {
         });
 
         noe_title1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        noe_title1.setForeground(new java.awt.Color(92, 101, 138));
+        noe_title1.setForeground(new java.awt.Color(250, 250, 255));
         noe_title1.setText("Last Name :");
 
-        name_field1.setBackground(new java.awt.Color(30, 43, 93));
+        name_field1.setBackground(new java.awt.Color(250, 250, 255));
         name_field1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        name_field1.setForeground(new java.awt.Color(250, 250, 255));
+        name_field1.setForeground(new java.awt.Color(92, 101, 138));
 
         date.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        date.setForeground(new java.awt.Color(92, 101, 138));
+        date.setForeground(new java.awt.Color(250, 250, 255));
         date.setText("Date ");
 
         time.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        time.setForeground(new java.awt.Color(92, 101, 138));
+        time.setForeground(new java.awt.Color(250, 250, 255));
         time.setText(" Time");
 
         updateBtn.setBackground(new java.awt.Color(253, 56, 29));
@@ -275,99 +286,95 @@ public class EmployeeProfile extends javax.swing.JFrame {
         });
 
         address_title.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        address_title.setForeground(new java.awt.Color(92, 101, 138));
+        address_title.setForeground(new java.awt.Color(250, 250, 255));
         address_title.setText("Address :");
 
-        address_field.setBackground(new java.awt.Color(30, 43, 93));
+        address_field.setBackground(new java.awt.Color(250, 250, 255));
         address_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        address_field.setForeground(new java.awt.Color(250, 250, 255));
-
-        LOGO.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
+        address_field.setForeground(new java.awt.Color(92, 101, 138));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
             .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addGap(34, 34, 34)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                                            .addComponent(noe_title)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(mainPanelLayout.createSequentialGroup()
+                                                            .addComponent(en_title)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(employeeNumber_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                                        .addComponent(noe_title1)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                                        .addComponent(b_title)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(bday_field)))
+                                                .addGap(18, 40, Short.MAX_VALUE)
+                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jt_title, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(s_title, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(cn_title, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addGap(50, 50, 50)
+                                                .addComponent(address_title)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(address_field))))
                                     .addGroup(mainPanelLayout.createSequentialGroup()
                                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                    .addComponent(noe_title)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(mainPanelLayout.createSequentialGroup()
-                                                    .addComponent(en_title)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(employeeNumber_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                                .addComponent(noe_title1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(name_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                                .addComponent(b_title)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(bday_field)))
-                                        .addGap(18, 40, Short.MAX_VALUE)
-                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jt_title, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(s_title, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(cn_title, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addComponent(address_title)
+                                            .addComponent(tin_title)
+                                            .addComponent(phhealth_title)
+                                            .addComponent(pagibig_title)
+                                            .addComponent(govIdNum_title)
+                                            .addComponent(sss_title))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(address_field)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tin_title)
-                                    .addComponent(phhealth_title)
-                                    .addComponent(pagibig_title)
-                                    .addComponent(govIdNum_title)
-                                    .addComponent(sss_title))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pagibig_field)
-                                    .addComponent(phhealth_field)
-                                    .addComponent(tin_field)
-                                    .addComponent(sss_field, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(contact_field)
-                                .addComponent(jobTitle_field)
-                                .addComponent(status_field, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(backButton)
-                                        .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(9, 9, 9)))))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(date)
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pagibig_field)
+                                            .addComponent(phhealth_field)
+                                            .addComponent(tin_field)
+                                            .addComponent(sss_field, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(time))
-                            .addComponent(greetings))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(48, 48, 48))
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LOGO)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(contact_field)
+                                        .addComponent(jobTitle_field)
+                                        .addComponent(status_field, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(backButton)
+                                                .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(9, 9, 9)))))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(greetings)
+                                .addGap(0, 576, Short.MAX_VALUE)))
+                        .addGap(48, 48, 48))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(date)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(time)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         mainPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {pagibig_field, phhealth_field, sss_field, tin_field});
@@ -377,13 +384,9 @@ public class EmployeeProfile extends javax.swing.JFrame {
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(greetings)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(date)
-                    .addComponent(time))
                 .addGap(30, 30, 30)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
@@ -429,7 +432,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(address_title)
                             .addComponent(address_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(33, 33, 33)
                         .addComponent(govIdNum_title)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -447,8 +450,10 @@ public class EmployeeProfile extends javax.swing.JFrame {
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tin_title)
                             .addComponent(tin_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LOGO)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(date)
+                    .addComponent(time))
                 .addContainerGap())
         );
 
@@ -500,7 +505,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
                 
         try {            
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url,user,password);
             String sql = "SELECT * FROM public.mph_employee_data WHERE employee_id= ?";
             
             pst=conn.prepareStatement(sql);
@@ -541,7 +546,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
                 String tin =rs.getString("tin");
                 tin_field.setText(tin);
                                 
-                          
+            conn.close();              
             }
        }
         catch (Exception ex) {
@@ -576,7 +581,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
             String status = status_field.getText();
             
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url,user,password);
             pst=conn.prepareStatement("UPDATE public.mph_employee_data SET last_name ='"+lastName+"', phone_number ='"+phoneNumber+"', position ='"+position+"', "
                     + "status ='"+status+"' WHERE employee_id =?");
                     
@@ -584,6 +589,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
             pst.execute();
                     
             JOptionPane.showMessageDialog(this, "Employee Profile Updated!");
+            conn.close();
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
@@ -610,7 +616,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
                         + " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url,user,password);
             pst=conn.prepareStatement(sql);
                     
             pst.setString(1, empNo);
@@ -629,6 +635,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
             pst.execute();
                     
             JOptionPane.showMessageDialog(this, "Employee Profile Added!");
+            conn.close();
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);

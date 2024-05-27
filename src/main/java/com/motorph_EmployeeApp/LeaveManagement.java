@@ -134,6 +134,7 @@ public class LeaveManagement extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         darkbluepanel = new javax.swing.JPanel();
         leave_title = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
@@ -155,27 +156,30 @@ public class LeaveManagement extends javax.swing.JFrame {
         approve_rb = new javax.swing.JRadioButton();
         reject_rb = new javax.swing.JRadioButton();
         clearBtn = new javax.swing.JButton();
-        logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainPanel.setBackground(new java.awt.Color(250, 250, 255));
+        mainPanel.setBackground(new java.awt.Color(30, 43, 93));
         mainPanel.setPreferredSize(new java.awt.Dimension(650, 450));
 
-        darkbluepanel.setBackground(new java.awt.Color(29, 53, 87));
+        darkbluepanel.setBackground(new java.awt.Color(250, 250, 255));
         darkbluepanel.setForeground(new java.awt.Color(217, 217, 217));
         darkbluepanel.setPreferredSize(new java.awt.Dimension(260, 60));
 
-        leave_title.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        leave_title.setForeground(new java.awt.Color(217, 217, 217));
+        leave_title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        leave_title.setForeground(new java.awt.Color(92, 101, 138));
         leave_title.setText("EMPLOYEE LEAVE MANAGEMENT");
+
+        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout darkbluepanelLayout = new javax.swing.GroupLayout(darkbluepanel);
         darkbluepanel.setLayout(darkbluepanelLayout);
         darkbluepanelLayout.setHorizontalGroup(
             darkbluepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(darkbluepanelLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
+                .addGap(27, 27, 27)
+                .addComponent(logo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(leave_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -185,14 +189,18 @@ public class LeaveManagement extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(leave_title, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, darkbluepanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logo)
+                .addGap(15, 15, 15))
         );
 
-        greetings.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        greetings.setForeground(new java.awt.Color(92, 101, 138));
+        greetings.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        greetings.setForeground(new java.awt.Color(250, 250, 255));
         greetings.setText("Greetings!");
 
-        date.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        date.setForeground(new java.awt.Color(92, 101, 138));
+        date.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        date.setForeground(new java.awt.Color(250, 250, 255));
         date.setText("Date ");
 
         backButton.setBackground(new java.awt.Color(253, 56, 29));
@@ -206,12 +214,12 @@ public class LeaveManagement extends javax.swing.JFrame {
         });
 
         noe_title1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        noe_title1.setForeground(new java.awt.Color(92, 101, 138));
+        noe_title1.setForeground(new java.awt.Color(250, 250, 255));
         noe_title1.setText("Employee ID :");
 
-        leaveTable.setBackground(new java.awt.Color(30, 43, 93));
+        leaveTable.setBackground(new java.awt.Color(250, 250, 255));
         leaveTable.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        leaveTable.setForeground(new java.awt.Color(250, 250, 255));
+        leaveTable.setForeground(new java.awt.Color(92, 101, 138));
         leaveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -242,49 +250,49 @@ public class LeaveManagement extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(leaveTable);
 
-        id_field.setBackground(new java.awt.Color(30, 43, 93));
+        id_field.setBackground(new java.awt.Color(250, 250, 255));
         id_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        id_field.setForeground(new java.awt.Color(250, 250, 255));
+        id_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        time.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        time.setForeground(new java.awt.Color(92, 101, 138));
+        time.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        time.setForeground(new java.awt.Color(250, 250, 255));
         time.setText("Time");
 
         lbl_firstName.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lbl_firstName.setForeground(new java.awt.Color(92, 101, 138));
+        lbl_firstName.setForeground(new java.awt.Color(250, 250, 255));
         lbl_firstName.setText("First Name :");
 
-        firstName_field.setBackground(new java.awt.Color(30, 43, 93));
+        firstName_field.setBackground(new java.awt.Color(250, 250, 255));
         firstName_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        firstName_field.setForeground(new java.awt.Color(250, 250, 255));
+        firstName_field.setForeground(new java.awt.Color(92, 101, 138));
 
         lbl_lastName.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lbl_lastName.setForeground(new java.awt.Color(92, 101, 138));
+        lbl_lastName.setForeground(new java.awt.Color(250, 250, 255));
         lbl_lastName.setText("Last Name :");
 
-        lastName_field.setBackground(new java.awt.Color(30, 43, 93));
+        lastName_field.setBackground(new java.awt.Color(250, 250, 255));
         lastName_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        lastName_field.setForeground(new java.awt.Color(250, 250, 255));
+        lastName_field.setForeground(new java.awt.Color(92, 101, 138));
 
         lbl_leaveType.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lbl_leaveType.setForeground(new java.awt.Color(92, 101, 138));
+        lbl_leaveType.setForeground(new java.awt.Color(250, 250, 255));
         lbl_leaveType.setText("Leave Type :");
 
-        leaveType_field.setBackground(new java.awt.Color(30, 43, 93));
+        leaveType_field.setBackground(new java.awt.Color(250, 250, 255));
         leaveType_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        leaveType_field.setForeground(new java.awt.Color(250, 250, 255));
+        leaveType_field.setForeground(new java.awt.Color(92, 101, 138));
 
         lbl_status.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lbl_status.setForeground(new java.awt.Color(92, 101, 138));
+        lbl_status.setForeground(new java.awt.Color(250, 250, 255));
         lbl_status.setText("Status :");
 
         lbl_date.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lbl_date.setForeground(new java.awt.Color(92, 101, 138));
+        lbl_date.setForeground(new java.awt.Color(250, 250, 255));
         lbl_date.setText("Date :");
 
-        date_field.setBackground(new java.awt.Color(30, 43, 93));
+        date_field.setBackground(new java.awt.Color(250, 250, 255));
         date_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        date_field.setForeground(new java.awt.Color(250, 250, 255));
+        date_field.setForeground(new java.awt.Color(92, 101, 138));
 
         updateBtn.setBackground(new java.awt.Color(253, 56, 29));
         updateBtn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -297,11 +305,11 @@ public class LeaveManagement extends javax.swing.JFrame {
         });
 
         approve_rb.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        approve_rb.setForeground(new java.awt.Color(92, 101, 138));
+        approve_rb.setForeground(new java.awt.Color(250, 250, 255));
         approve_rb.setText("Approved");
 
         reject_rb.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        reject_rb.setForeground(new java.awt.Color(92, 101, 138));
+        reject_rb.setForeground(new java.awt.Color(250, 250, 255));
         reject_rb.setText("Rejected");
 
         clearBtn.setBackground(new java.awt.Color(253, 56, 29));
@@ -313,8 +321,6 @@ public class LeaveManagement extends javax.swing.JFrame {
                 clearBtnActionPerformed(evt);
             }
         });
-
-        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -330,7 +336,9 @@ public class LeaveManagement extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(logo)
+                                .addComponent(date)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(time)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(backButton))
                             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -342,12 +350,7 @@ public class LeaveManagement extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(greetings)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(date)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(time))))
+                        .addComponent(greetings))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -382,20 +385,16 @@ public class LeaveManagement extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(darkbluepanel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(greetings)
+                .addGap(36, 36, 36)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noe_title1)
+                    .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_date)
+                    .addComponent(date_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(greetings)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(date)
-                            .addComponent(time))
-                        .addGap(14, 14, 14)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(noe_title1)
-                            .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_date)
-                            .addComponent(date_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_firstName)
@@ -415,12 +414,14 @@ public class LeaveManagement extends javax.swing.JFrame {
                             .addComponent(clearBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addComponent(backButton)
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logo)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(date)
+                            .addComponent(time))
                         .addContainerGap())))
         );
 

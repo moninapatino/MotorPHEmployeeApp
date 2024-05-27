@@ -103,6 +103,7 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         darkbluePanel = new javax.swing.JPanel();
         attendance_title = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -115,43 +116,52 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         payperiod_lbl = new javax.swing.JLabel();
         hoursWorked_lbl = new javax.swing.JLabel();
         hoursworked_field = new javax.swing.JTextField();
-        logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainPanel.setBackground(new java.awt.Color(250, 250, 255));
+        mainPanel.setBackground(new java.awt.Color(30, 43, 93));
 
-        darkbluePanel.setBackground(new java.awt.Color(30, 43, 93));
+        darkbluePanel.setBackground(new java.awt.Color(250, 250, 255));
 
-        attendance_title.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-        attendance_title.setForeground(new java.awt.Color(217, 217, 217));
+        attendance_title.setBackground(new java.awt.Color(92, 101, 138));
+        attendance_title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        attendance_title.setForeground(new java.awt.Color(92, 101, 138));
         attendance_title.setText("EMPLOYEE ATTENDANCE");
+
+        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout darkbluePanelLayout = new javax.swing.GroupLayout(darkbluePanel);
         darkbluePanel.setLayout(darkbluePanelLayout);
         darkbluePanelLayout.setHorizontalGroup(
             darkbluePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, darkbluePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(logo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(attendance_title)
-                .addGap(257, 257, 257))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         darkbluePanelLayout.setVerticalGroup(
             darkbluePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(attendance_title, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, darkbluePanelLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(darkbluePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(attendance_title, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logo))
+                .addGap(12, 12, 12))
         );
 
         greetings.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        greetings.setForeground(new java.awt.Color(92, 101, 138));
+        greetings.setForeground(new java.awt.Color(250, 250, 255));
         greetings.setText("Greetings!");
 
         date.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        date.setForeground(new java.awt.Color(92, 101, 138));
+        date.setForeground(new java.awt.Color(250, 250, 255));
         date.setText("Date");
 
-        attendance_table.setBackground(new java.awt.Color(30, 43, 93));
+        attendance_table.setBackground(new java.awt.Color(250, 250, 255));
         attendance_table.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        attendance_table.setForeground(new java.awt.Color(250, 250, 255));
+        attendance_table.setForeground(new java.awt.Color(92, 101, 138));
         attendance_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -181,12 +191,12 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         });
 
         noe_title1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        noe_title1.setForeground(new java.awt.Color(92, 101, 138));
+        noe_title1.setForeground(new java.awt.Color(250, 250, 255));
         noe_title1.setText("Employee ID :");
 
-        id_field.setBackground(new java.awt.Color(30, 43, 93));
+        id_field.setBackground(new java.awt.Color(250, 250, 255));
         id_field.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        id_field.setForeground(new java.awt.Color(250, 250, 255));
+        id_field.setForeground(new java.awt.Color(92, 101, 138));
         id_field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 id_fieldKeyReleased(evt);
@@ -194,12 +204,12 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         });
 
         time.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        time.setForeground(new java.awt.Color(92, 101, 138));
+        time.setForeground(new java.awt.Color(250, 250, 255));
         time.setText("Time");
 
-        payPeriodComboBox.setBackground(new java.awt.Color(30, 43, 93));
+        payPeriodComboBox.setBackground(new java.awt.Color(250, 250, 255));
         payPeriodComboBox.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        payPeriodComboBox.setForeground(new java.awt.Color(250, 250, 255));
+        payPeriodComboBox.setForeground(new java.awt.Color(92, 101, 138));
         payPeriodComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January 1-15, 2024", "January 16-31, 2024" }));
         payPeriodComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,79 +218,71 @@ public class EmployeeAttendance extends javax.swing.JFrame {
         });
 
         payperiod_lbl.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        payperiod_lbl.setForeground(new java.awt.Color(92, 101, 138));
+        payperiod_lbl.setForeground(new java.awt.Color(250, 250, 255));
         payperiod_lbl.setText("Pay Period :");
 
         hoursWorked_lbl.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        hoursWorked_lbl.setForeground(new java.awt.Color(92, 101, 138));
+        hoursWorked_lbl.setForeground(new java.awt.Color(250, 250, 255));
         hoursWorked_lbl.setText("Total numbers of Hours Worked :");
 
         hoursworked_field.setEditable(false);
-        hoursworked_field.setBackground(new java.awt.Color(30, 43, 93));
+        hoursworked_field.setBackground(new java.awt.Color(250, 250, 255));
         hoursworked_field.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        hoursworked_field.setForeground(new java.awt.Color(250, 250, 255));
-
-        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
+        hoursworked_field.setForeground(new java.awt.Color(92, 101, 138));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(darkbluePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(hoursWorked_lbl))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(date)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(time)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(payperiod_lbl)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(payPeriodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166))
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(36, Short.MAX_VALUE)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(greetings)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(noe_title1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(240, 240, 240)
-                                .addComponent(hoursworked_field, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(logo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backButton)))
+                        .addGap(744, 744, 744)
+                        .addComponent(backButton))
+                    .addComponent(greetings))
                 .addContainerGap(44, Short.MAX_VALUE))
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(hoursWorked_lbl)
+                            .addComponent(payperiod_lbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(noe_title1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(224, 224, 224)))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hoursworked_field, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(payPeriodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(date)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(time)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(darkbluePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(greetings)
+                .addGap(22, 22, 22)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(payPeriodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(payperiod_lbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(date)
-                            .addComponent(time))
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(payPeriodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(payperiod_lbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noe_title1)
                     .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,10 +291,12 @@ public class EmployeeAttendance extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backButton)
-                    .addComponent(logo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(backButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(date)
+                    .addComponent(time))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

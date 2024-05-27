@@ -58,7 +58,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(30, 43, 93));
 
-        motorPhTitle.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        motorPhTitle.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         motorPhTitle.setForeground(new java.awt.Color(250, 250, 255));
         motorPhTitle.setText("EMPLOYEE PORTAL");
 
@@ -83,9 +83,9 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        logInButton.setBackground(new java.awt.Color(250, 250, 255));
-        logInButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logInButton.setForeground(new java.awt.Color(29, 53, 87));
+        logInButton.setBackground(new java.awt.Color(253, 56, 29));
+        logInButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        logInButton.setForeground(new java.awt.Color(250, 250, 255));
         logInButton.setText("LOG IN");
         logInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +142,7 @@ public class LoginPage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
@@ -185,10 +185,13 @@ public class LoginPage extends javax.swing.JFrame {
             rs=pst.executeQuery();
                                   
             if(rs.next()){
+                
                 EmployeeAccessPortal employeeAccessPortal = new EmployeeAccessPortal (username);
                 employeeAccessPortal.setVisible(true);
                 
                 setVisible(false);
+                
+                
                 
             }else if(userIDText.getText().contains("Admin") && passwordText.getText().contains("123")) {
                 JOptionPane.showMessageDialog(null, "Log in Successful");

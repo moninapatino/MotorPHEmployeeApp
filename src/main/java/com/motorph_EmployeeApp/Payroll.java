@@ -89,6 +89,7 @@ public class Payroll extends javax.swing.JFrame {
         mainPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         payroll_title = new javax.swing.JLabel();
+        LOGO = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
         noe_label = new javax.swing.JLabel();
@@ -135,43 +136,50 @@ public class Payroll extends javax.swing.JFrame {
         netpay_field = new javax.swing.JTextField();
         noe_label1 = new javax.swing.JLabel();
         ename_field1 = new javax.swing.JTextField();
-        LOGO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainPanel.setBackground(new java.awt.Color(250, 250, 255));
+        mainPanel.setBackground(new java.awt.Color(30, 43, 93));
         mainPanel.setForeground(new java.awt.Color(217, 217, 217));
 
-        jPanel1.setBackground(new java.awt.Color(30, 43, 93));
+        jPanel1.setBackground(new java.awt.Color(250, 250, 255));
 
-        payroll_title.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-        payroll_title.setForeground(new java.awt.Color(217, 217, 217));
+        payroll_title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        payroll_title.setForeground(new java.awt.Color(92, 101, 138));
         payroll_title.setText("EMPLOYEE PAYROLL");
+
+        LOGO.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(334, 334, 334)
+                .addGap(23, 23, 23)
+                .addComponent(LOGO)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(payroll_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(payroll_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LOGO)
+                .addGap(21, 21, 21))
         );
 
-        greetings.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        greetings.setForeground(new java.awt.Color(92, 101, 138));
+        greetings.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        greetings.setForeground(new java.awt.Color(250, 250, 255));
         greetings.setText("Greetings!");
 
-        time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        time.setForeground(new java.awt.Color(92, 101, 138));
+        time.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(250, 250, 255));
         time.setText("Time");
 
         noe_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        noe_label.setForeground(new java.awt.Color(92, 101, 138));
+        noe_label.setForeground(new java.awt.Color(250, 250, 255));
         noe_label.setText("First Name :");
 
         clearButton1.setBackground(new java.awt.Color(253, 56, 29));
@@ -205,137 +213,137 @@ public class Payroll extends javax.swing.JFrame {
         });
 
         hoursWorked_lb.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        hoursWorked_lb.setForeground(new java.awt.Color(92, 101, 138));
+        hoursWorked_lb.setForeground(new java.awt.Color(250, 250, 255));
         hoursWorked_lb.setText("Numbers of hours worked:");
 
         hr_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        hr_label.setForeground(new java.awt.Color(92, 101, 138));
+        hr_label.setForeground(new java.awt.Color(250, 250, 255));
         hr_label.setText("Hourly Rate:");
 
         riceA_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        riceA_label.setForeground(new java.awt.Color(92, 101, 138));
+        riceA_label.setForeground(new java.awt.Color(250, 250, 255));
         riceA_label.setText("Rice Subsidy:");
 
         phoneA_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        phoneA_label.setForeground(new java.awt.Color(92, 101, 138));
+        phoneA_label.setForeground(new java.awt.Color(250, 250, 255));
         phoneA_label.setText("Phone Allowance:");
 
         clothingA_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        clothingA_label.setForeground(new java.awt.Color(92, 101, 138));
+        clothingA_label.setForeground(new java.awt.Color(250, 250, 255));
         clothingA_label.setText("Clothing Allowance:");
 
         sss_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        sss_label.setForeground(new java.awt.Color(92, 101, 138));
+        sss_label.setForeground(new java.awt.Color(250, 250, 255));
         sss_label.setText("SSS Contribution:");
 
         pHealth_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        pHealth_label.setForeground(new java.awt.Color(92, 101, 138));
+        pHealth_label.setForeground(new java.awt.Color(250, 250, 255));
         pHealth_label.setText("PhilHealth Contribution:");
 
         pagibig_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        pagibig_label.setForeground(new java.awt.Color(92, 101, 138));
+        pagibig_label.setForeground(new java.awt.Color(250, 250, 255));
         pagibig_label.setText("Pag-ibig Contribution:");
 
         td_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        td_label.setForeground(new java.awt.Color(92, 101, 138));
+        td_label.setForeground(new java.awt.Color(250, 250, 255));
         td_label.setText("Total Deductions:");
 
         ta_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        ta_label.setForeground(new java.awt.Color(92, 101, 138));
+        ta_label.setForeground(new java.awt.Color(250, 250, 255));
         ta_label.setText("Total Allowances:");
 
-        employeeid_field.setBackground(new java.awt.Color(30, 43, 93));
+        employeeid_field.setBackground(new java.awt.Color(250, 250, 255));
         employeeid_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        employeeid_field.setForeground(new java.awt.Color(250, 250, 255));
+        employeeid_field.setForeground(new java.awt.Color(92, 101, 138));
         employeeid_field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 employeeid_fieldKeyReleased(evt);
             }
         });
 
-        hoursWorked_field.setBackground(new java.awt.Color(30, 43, 93));
+        hoursWorked_field.setBackground(new java.awt.Color(250, 250, 255));
         hoursWorked_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        hoursWorked_field.setForeground(new java.awt.Color(250, 250, 255));
+        hoursWorked_field.setForeground(new java.awt.Color(92, 101, 138));
 
         phoneA_field.setEditable(false);
-        phoneA_field.setBackground(new java.awt.Color(30, 43, 93));
+        phoneA_field.setBackground(new java.awt.Color(250, 250, 255));
         phoneA_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        phoneA_field.setForeground(new java.awt.Color(250, 250, 255));
+        phoneA_field.setForeground(new java.awt.Color(92, 101, 138));
 
         hourlyRate_field.setEditable(false);
-        hourlyRate_field.setBackground(new java.awt.Color(30, 43, 93));
+        hourlyRate_field.setBackground(new java.awt.Color(250, 250, 255));
         hourlyRate_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        hourlyRate_field.setForeground(new java.awt.Color(250, 250, 255));
+        hourlyRate_field.setForeground(new java.awt.Color(92, 101, 138));
 
         sss_field.setEditable(false);
-        sss_field.setBackground(new java.awt.Color(30, 43, 93));
+        sss_field.setBackground(new java.awt.Color(250, 250, 255));
         sss_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        sss_field.setForeground(new java.awt.Color(250, 250, 255));
+        sss_field.setForeground(new java.awt.Color(92, 101, 138));
 
         clothing_field.setEditable(false);
-        clothing_field.setBackground(new java.awt.Color(30, 43, 93));
+        clothing_field.setBackground(new java.awt.Color(250, 250, 255));
         clothing_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        clothing_field.setForeground(new java.awt.Color(250, 250, 255));
+        clothing_field.setForeground(new java.awt.Color(92, 101, 138));
 
         riceA_field.setEditable(false);
-        riceA_field.setBackground(new java.awt.Color(30, 43, 93));
+        riceA_field.setBackground(new java.awt.Color(250, 250, 255));
         riceA_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        riceA_field.setForeground(new java.awt.Color(250, 250, 255));
+        riceA_field.setForeground(new java.awt.Color(92, 101, 138));
 
         pagibig_field.setEditable(false);
-        pagibig_field.setBackground(new java.awt.Color(30, 43, 93));
+        pagibig_field.setBackground(new java.awt.Color(250, 250, 255));
         pagibig_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        pagibig_field.setForeground(new java.awt.Color(250, 250, 255));
+        pagibig_field.setForeground(new java.awt.Color(92, 101, 138));
 
         pHealth_field.setEditable(false);
-        pHealth_field.setBackground(new java.awt.Color(30, 43, 93));
+        pHealth_field.setBackground(new java.awt.Color(250, 250, 255));
         pHealth_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        pHealth_field.setForeground(new java.awt.Color(250, 250, 255));
+        pHealth_field.setForeground(new java.awt.Color(92, 101, 138));
 
         employeeid_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        employeeid_label.setForeground(new java.awt.Color(92, 101, 138));
+        employeeid_label.setForeground(new java.awt.Color(250, 250, 255));
         employeeid_label.setText("Employee ID :");
 
         ename_field.setEditable(false);
-        ename_field.setBackground(new java.awt.Color(30, 43, 93));
+        ename_field.setBackground(new java.awt.Color(250, 250, 255));
         ename_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        ename_field.setForeground(new java.awt.Color(250, 250, 255));
+        ename_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        totalA_field.setBackground(new java.awt.Color(30, 43, 93));
+        totalA_field.setBackground(new java.awt.Color(250, 250, 255));
         totalA_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        totalA_field.setForeground(new java.awt.Color(250, 250, 255));
+        totalA_field.setForeground(new java.awt.Color(92, 101, 138));
 
         totalD_field.setEditable(false);
-        totalD_field.setBackground(new java.awt.Color(30, 43, 93));
+        totalD_field.setBackground(new java.awt.Color(250, 250, 255));
         totalD_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        totalD_field.setForeground(new java.awt.Color(250, 250, 255));
+        totalD_field.setForeground(new java.awt.Color(92, 101, 138));
 
         basicsalary_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        basicsalary_label.setForeground(new java.awt.Color(92, 101, 138));
+        basicsalary_label.setForeground(new java.awt.Color(250, 250, 255));
         basicsalary_label.setText("Basic Salary:");
 
         grosspay_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        grosspay_label.setForeground(new java.awt.Color(92, 101, 138));
+        grosspay_label.setForeground(new java.awt.Color(250, 250, 255));
         grosspay_label.setText("Gross Pay:");
 
         netpay_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        netpay_label.setForeground(new java.awt.Color(92, 101, 138));
+        netpay_label.setForeground(new java.awt.Color(250, 250, 255));
         netpay_label.setText("Net Pay:");
 
-        basicsalary_field.setBackground(new java.awt.Color(30, 43, 93));
+        basicsalary_field.setBackground(new java.awt.Color(250, 250, 255));
         basicsalary_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        basicsalary_field.setForeground(new java.awt.Color(250, 250, 255));
+        basicsalary_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        grosspay_field.setBackground(new java.awt.Color(30, 43, 93));
+        grosspay_field.setBackground(new java.awt.Color(250, 250, 255));
         grosspay_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        grosspay_field.setForeground(new java.awt.Color(250, 250, 255));
+        grosspay_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        tax_field.setBackground(new java.awt.Color(30, 43, 93));
+        tax_field.setBackground(new java.awt.Color(250, 250, 255));
         tax_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        tax_field.setForeground(new java.awt.Color(250, 250, 255));
+        tax_field.setForeground(new java.awt.Color(92, 101, 138));
 
         tax_label.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        tax_label.setForeground(new java.awt.Color(92, 101, 138));
+        tax_label.setForeground(new java.awt.Color(250, 250, 255));
         tax_label.setText("Withholding Tax:");
 
         calculateButton.setBackground(new java.awt.Color(253, 56, 29));
@@ -347,19 +355,19 @@ public class Payroll extends javax.swing.JFrame {
             }
         });
 
-        date.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        date.setForeground(new java.awt.Color(92, 101, 138));
+        date.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(250, 250, 255));
         date.setText("Date ");
 
-        paySlipArea.setBackground(new java.awt.Color(30, 43, 93));
+        paySlipArea.setBackground(new java.awt.Color(250, 250, 255));
         paySlipArea.setColumns(20);
         paySlipArea.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
-        paySlipArea.setForeground(new java.awt.Color(250, 250, 255));
+        paySlipArea.setForeground(new java.awt.Color(92, 101, 138));
         paySlipArea.setRows(5);
         jScrollPane1.setViewportView(paySlipArea);
 
-        tax1_radio.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        tax1_radio.setForeground(new java.awt.Color(92, 101, 138));
+        tax1_radio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tax1_radio.setForeground(new java.awt.Color(250, 250, 255));
         tax1_radio.setText("Gross Pay = 20,832 and below");
         tax1_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,8 +375,8 @@ public class Payroll extends javax.swing.JFrame {
             }
         });
 
-        tax2_radio.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        tax2_radio.setForeground(new java.awt.Color(92, 101, 138));
+        tax2_radio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tax2_radio.setForeground(new java.awt.Color(250, 250, 255));
         tax2_radio.setText("Gross Pay = 20,833 to below 33,333");
         tax2_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,8 +384,8 @@ public class Payroll extends javax.swing.JFrame {
             }
         });
 
-        tax3_radio.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        tax3_radio.setForeground(new java.awt.Color(92, 101, 138));
+        tax3_radio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tax3_radio.setForeground(new java.awt.Color(250, 250, 255));
         tax3_radio.setText("Gross Pay = 33,333 to below 66,667");
         tax3_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,20 +393,18 @@ public class Payroll extends javax.swing.JFrame {
             }
         });
 
-        netpay_field.setBackground(new java.awt.Color(30, 43, 93));
+        netpay_field.setBackground(new java.awt.Color(250, 250, 255));
         netpay_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        netpay_field.setForeground(new java.awt.Color(250, 250, 255));
+        netpay_field.setForeground(new java.awt.Color(92, 101, 138));
 
         noe_label1.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        noe_label1.setForeground(new java.awt.Color(92, 101, 138));
+        noe_label1.setForeground(new java.awt.Color(250, 250, 255));
         noe_label1.setText("Last Name :");
 
         ename_field1.setEditable(false);
-        ename_field1.setBackground(new java.awt.Color(30, 43, 93));
+        ename_field1.setBackground(new java.awt.Color(250, 250, 255));
         ename_field1.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        ename_field1.setForeground(new java.awt.Color(250, 250, 255));
-
-        LOGO.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
+        ename_field1.setForeground(new java.awt.Color(92, 101, 138));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -406,42 +412,48 @@ public class Payroll extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(16, 16, 16)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(date)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(time)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(greetings)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(backButton))
-                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(0, 20, Short.MAX_VALUE)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(noe_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(ename_field, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(noe_label1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(ename_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(employeeid_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(employeeid_field, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(103, 103, 103)
+                                        .addComponent(clearButton1))
                                     .addGroup(mainPanelLayout.createSequentialGroup()
                                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                                .addGap(42, 42, 42)
-                                                .addComponent(hr_label)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(hourlyRate_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(mainPanelLayout.createSequentialGroup()
+                                                        .addGap(42, 42, 42)
+                                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(tax1_radio)
+                                                            .addComponent(tax2_radio)
+                                                            .addComponent(tax3_radio)))
                                                     .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(ta_label)
-                                                        .addComponent(clothingA_label))
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(clothing_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(totalA_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(mainPanelLayout.createSequentialGroup()
-                                                    .addGap(12, 12, 12)
-                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(mainPanelLayout.createSequentialGroup()
+                                                            .addComponent(hr_label)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(hourlyRate_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(mainPanelLayout.createSequentialGroup()
                                                             .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                 .addComponent(phoneA_label)
@@ -449,80 +461,63 @@ public class Payroll extends javax.swing.JFrame {
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                             .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                 .addComponent(phoneA_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(riceA_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addComponent(grosspay_label)
-                                                                .addComponent(basicsalary_label))
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(grosspay_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(basicsalary_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(riceA_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(mainPanelLayout.createSequentialGroup()
+                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(grosspay_label)
+                                                        .addComponent(basicsalary_label))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(grosspay_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(basicsalary_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGroup(mainPanelLayout.createSequentialGroup()
+                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(ta_label)
+                                                        .addComponent(clothingA_label))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(clothing_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(totalA_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                                .addGap(34, 34, 34)
-                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                                        .addComponent(hoursWorked_lb)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(hoursWorked_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                                        .addComponent(netpay_label)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(netpay_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(pHealth_label)
-                                                            .addComponent(sss_label, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(td_label, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(pagibig_label, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                            .addComponent(sss_field, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                                            .addComponent(pHealth_field)
-                                                            .addComponent(pagibig_field)
-                                                            .addComponent(totalD_field)))))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(tax1_radio)
-                                                    .addComponent(tax2_radio)
-                                                    .addComponent(tax3_radio)))))
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addComponent(calculateButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(payslipButton))
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addComponent(tax_label)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tax_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(mainPanelLayout.createSequentialGroup()
-                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(hoursWorked_lb)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(hoursWorked_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                                .addGap(112, 112, 112)
-                                                .addComponent(employeeid_label)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(employeeid_field, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
                                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                        .addComponent(noe_label)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(ename_field, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                                        .addComponent(noe_label1)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(ename_field1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                        .addGap(103, 103, 103)
-                                        .addComponent(clearButton1)))
+                                                    .addComponent(pHealth_label)
+                                                    .addComponent(sss_label, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(td_label, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(pagibig_label, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(sss_field, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                                    .addComponent(pHealth_field)
+                                                    .addComponent(pagibig_field)
+                                                    .addComponent(totalD_field)))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(netpay_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(netpay_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(tax_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(tax_field, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                                .addComponent(calculateButton)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(payslipButton)))))
                                 .addGap(31, 31, 31)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(date)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(time)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(backButton)))
                         .addGap(21, 21, 21))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(LOGO)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {employeeid_field, ename_field, ename_field1});
@@ -531,13 +526,9 @@ public class Payroll extends javax.swing.JFrame {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(greetings)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(time)
-                    .addComponent(date))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(17, 17, 17)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(employeeid_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(employeeid_label))
@@ -546,7 +537,8 @@ public class Payroll extends javax.swing.JFrame {
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backButton))
+                        .addComponent(backButton)
+                        .addGap(15, 15, 15))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ename_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -557,13 +549,11 @@ public class Payroll extends javax.swing.JFrame {
                             .addComponent(ename_field1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(noe_label1))
                         .addGap(18, 18, 18)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(hoursWorked_lb)
-                                .addComponent(hoursWorked_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(hr_label)
-                                .addComponent(hourlyRate_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(hoursWorked_lb)
+                            .addComponent(hoursWorked_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hr_label)
+                            .addComponent(hourlyRate_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -581,15 +571,7 @@ public class Payroll extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(ta_label)
-                                    .addComponent(totalA_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(basicsalary_label)
-                                    .addComponent(basicsalary_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(grosspay_label)
-                                    .addComponent(grosspay_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(totalA_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(sss_label)
@@ -605,28 +587,41 @@ public class Payroll extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(td_label)
-                                    .addComponent(totalD_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(tax1_radio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tax2_radio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tax3_radio)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(totalD_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(tax_label)
                                     .addComponent(tax_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(netpay_label)
-                                    .addComponent(netpay_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
+                                    .addComponent(netpay_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(basicsalary_label)
+                                    .addComponent(basicsalary_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(grosspay_label)
+                                    .addComponent(grosspay_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(tax1_radio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tax2_radio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tax3_radio)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(payslipButton)
                             .addComponent(calculateButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(LOGO)))
-                .addGap(15, 15, 15))
+                        .addGap(54, 54, 54)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(time)
+                            .addComponent(date))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

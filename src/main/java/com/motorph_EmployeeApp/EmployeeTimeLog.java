@@ -102,6 +102,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         darkbluePanel = new javax.swing.JPanel();
         attendance_title = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         greetings = new javax.swing.JLabel();
@@ -119,70 +120,81 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(69, 123, 157));
+        jPanel1.setBackground(new java.awt.Color(30, 43, 93));
         jPanel1.setForeground(new java.awt.Color(69, 123, 157));
 
-        darkbluePanel.setBackground(new java.awt.Color(29, 53, 87));
+        darkbluePanel.setBackground(new java.awt.Color(250, 250, 255));
 
-        attendance_title.setFont(new java.awt.Font("Gadugi", 0, 30)); // NOI18N
-        attendance_title.setForeground(new java.awt.Color(217, 217, 217));
-        attendance_title.setText("Employee Time Log");
+        attendance_title.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        attendance_title.setForeground(new java.awt.Color(92, 101, 138));
+        attendance_title.setText("EMPLOYEE TIME LOG");
+
+        logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout darkbluePanelLayout = new javax.swing.GroupLayout(darkbluePanel);
         darkbluePanel.setLayout(darkbluePanelLayout);
         darkbluePanelLayout.setHorizontalGroup(
             darkbluePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(darkbluePanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
+                .addComponent(logo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(attendance_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         darkbluePanelLayout.setVerticalGroup(
             darkbluePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(attendance_title, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+            .addComponent(attendance_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, darkbluePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo)
+                .addGap(14, 14, 14))
         );
 
-        time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        time.setForeground(new java.awt.Color(217, 217, 217));
+        time.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        time.setForeground(new java.awt.Color(250, 250, 255));
         time.setText("Time");
 
-        date.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        date.setForeground(new java.awt.Color(217, 217, 217));
+        date.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        date.setForeground(new java.awt.Color(250, 250, 255));
         date.setText("Date");
 
-        greetings.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        greetings.setForeground(new java.awt.Color(217, 217, 217));
+        greetings.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        greetings.setForeground(new java.awt.Color(250, 250, 255));
         greetings.setText("Greetings!");
 
-        noe_title1.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        noe_title1.setForeground(new java.awt.Color(217, 217, 217));
+        noe_title1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        noe_title1.setForeground(new java.awt.Color(250, 250, 255));
         noe_title1.setText("Employee ID :");
 
-        id_field.setBackground(new java.awt.Color(217, 217, 217));
-        id_field.setForeground(new java.awt.Color(29, 53, 87));
+        id_field.setBackground(new java.awt.Color(250, 250, 255));
+        id_field.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        id_field.setForeground(new java.awt.Color(92, 101, 138));
         id_field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 id_fieldKeyReleased(evt);
             }
         });
 
-        firstName_field.setBackground(new java.awt.Color(217, 217, 217));
-        firstName_field.setForeground(new java.awt.Color(29, 53, 87));
+        firstName_field.setBackground(new java.awt.Color(250, 250, 255));
+        firstName_field.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        firstName_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        first_name.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        first_name.setForeground(new java.awt.Color(217, 217, 217));
+        first_name.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        first_name.setForeground(new java.awt.Color(250, 250, 255));
         first_name.setText("First Name :");
 
-        lastName_field.setBackground(new java.awt.Color(217, 217, 217));
-        lastName_field.setForeground(new java.awt.Color(29, 53, 87));
+        lastName_field.setBackground(new java.awt.Color(250, 250, 255));
+        lastName_field.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lastName_field.setForeground(new java.awt.Color(92, 101, 138));
 
-        last_name.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
-        last_name.setForeground(new java.awt.Color(217, 217, 217));
+        last_name.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        last_name.setForeground(new java.awt.Color(250, 250, 255));
         last_name.setText("Last Name :");
 
-        attendance_table.setBackground(new java.awt.Color(217, 217, 217));
-        attendance_table.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        attendance_table.setForeground(new java.awt.Color(29, 53, 87));
+        attendance_table.setBackground(new java.awt.Color(250, 250, 255));
+        attendance_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        attendance_table.setForeground(new java.awt.Color(92, 101, 138));
         attendance_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -208,9 +220,9 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(attendance_table);
 
-        backButton.setBackground(new java.awt.Color(29, 53, 87));
+        backButton.setBackground(new java.awt.Color(253, 56, 29));
         backButton.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        backButton.setForeground(new java.awt.Color(217, 217, 217));
+        backButton.setForeground(new java.awt.Color(250, 250, 255));
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,9 +230,9 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
             }
         });
 
-        timeInBtn.setBackground(new java.awt.Color(29, 53, 87));
+        timeInBtn.setBackground(new java.awt.Color(253, 56, 29));
         timeInBtn.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        timeInBtn.setForeground(new java.awt.Color(217, 217, 217));
+        timeInBtn.setForeground(new java.awt.Color(250, 250, 255));
         timeInBtn.setText("Time In");
         timeInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,9 +240,9 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
             }
         });
 
-        timeOutBtn.setBackground(new java.awt.Color(29, 53, 87));
+        timeOutBtn.setBackground(new java.awt.Color(253, 56, 29));
         timeOutBtn.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        timeOutBtn.setForeground(new java.awt.Color(217, 217, 217));
+        timeOutBtn.setForeground(new java.awt.Color(250, 250, 255));
         timeOutBtn.setText("Time Out");
         timeOutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,19 +256,11 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(darkbluePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(backButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(greetings)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(date)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(time)))
+                            .addComponent(greetings, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(last_name)
@@ -270,7 +274,14 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
                                     .addComponent(lastName_field, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(43, 43, 43)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 19, Short.MAX_VALUE)))
+                        .addGap(0, 19, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(date)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(time)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(132, 132, 132)
@@ -285,13 +296,10 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
                 .addComponent(darkbluePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(greetings)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(date)
-                    .addComponent(time))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
+                        .addGap(1, 1, 1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(noe_title1)
                             .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -303,18 +311,23 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(last_name, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lastName_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(timeInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(timeOutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backButton)
-                .addGap(31, 31, 31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(backButton)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(date)
+                            .addComponent(time))
+                        .addGap(17, 17, 17))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -325,7 +338,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -488,6 +501,7 @@ public class EmployeeTimeLog extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lastName_field;
     private javax.swing.JLabel last_name;
+    private javax.swing.JLabel logo;
     private javax.swing.JLabel noe_title1;
     private javax.swing.JLabel time;
     private javax.swing.JButton timeInBtn;
