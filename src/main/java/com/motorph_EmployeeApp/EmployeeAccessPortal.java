@@ -47,15 +47,15 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        empportal_label = new javax.swing.JLabel();
-        greetings = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
+        logOutButton = new javax.swing.JButton();
+        empportal_label = new javax.swing.JLabel();
+        LOGO = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         empProfile_btn = new javax.swing.JButton();
         leave_btn = new javax.swing.JButton();
         attendance_btn = new javax.swing.JButton();
-        logOutButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Gadugi", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(217, 217, 217));
@@ -65,79 +65,18 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(69, 123, 157));
+        jPanel1.setBackground(new java.awt.Color(250, 250, 255));
+        jPanel1.setForeground(new java.awt.Color(250, 250, 255));
 
-        jPanel2.setBackground(new java.awt.Color(29, 53, 87));
-
-        empportal_label.setFont(new java.awt.Font("Gadugi", 0, 30)); // NOI18N
-        empportal_label.setForeground(new java.awt.Color(217, 217, 217));
-        empportal_label.setText("Employee Portal");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(empportal_label)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(empportal_label, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
-
-        greetings.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        greetings.setForeground(new java.awt.Color(217, 217, 217));
-        greetings.setText("Greetings!");
-
-        date.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        date.setForeground(new java.awt.Color(217, 217, 217));
+        date.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(92, 101, 138));
         date.setText("Date");
 
-        time.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        time.setForeground(new java.awt.Color(217, 217, 217));
+        time.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(92, 101, 138));
         time.setText("Time");
 
-        empProfile_btn.setBackground(new java.awt.Color(29, 53, 87));
-        empProfile_btn.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        empProfile_btn.setForeground(new java.awt.Color(217, 217, 217));
-        empProfile_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\profile.png")); // NOI18N
-        empProfile_btn.setText("Employee Profile");
-        empProfile_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
-        empProfile_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empProfile_btnActionPerformed(evt);
-            }
-        });
-
-        leave_btn.setBackground(new java.awt.Color(29, 53, 87));
-        leave_btn.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        leave_btn.setForeground(new java.awt.Color(217, 217, 217));
-        leave_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\leave.png")); // NOI18N
-        leave_btn.setText("Leave Management");
-        leave_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
-        leave_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                leave_btnActionPerformed(evt);
-            }
-        });
-
-        attendance_btn.setBackground(new java.awt.Color(29, 53, 87));
-        attendance_btn.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        attendance_btn.setForeground(new java.awt.Color(217, 217, 217));
-        attendance_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\attendance.png")); // NOI18N
-        attendance_btn.setText("Time In/ Time Out");
-        attendance_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
-        attendance_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                attendance_btnActionPerformed(evt);
-            }
-        });
-
-        logOutButton.setBackground(new java.awt.Color(29, 53, 87));
+        logOutButton.setBackground(new java.awt.Color(253, 56, 29));
         logOutButton.setForeground(new java.awt.Color(217, 217, 217));
         logOutButton.setText("Log out");
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -146,67 +85,130 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
             }
         });
 
+        empportal_label.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        empportal_label.setForeground(new java.awt.Color(92, 101, 138));
+        empportal_label.setText("EMPLOYEE PORTAL");
+
+        LOGO.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\LOGO 2.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(LOGO)
+                .addGap(73, 73, 73))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(date)
+                .addGap(18, 18, 18)
+                .addComponent(time)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(date)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(time))
-                            .addComponent(greetings)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(leave_btn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(attendance_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(logOutButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(empProfile_btn)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(empportal_label)
+                        .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(logOutButton)
+                        .addGap(134, 134, 134))))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {attendance_btn, empProfile_btn, leave_btn});
-
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(greetings)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(empportal_label, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LOGO)
+                .addGap(18, 18, 18)
+                .addComponent(logOutButton)
+                .addGap(107, 107, 107)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date)
                     .addComponent(time))
-                .addGap(43, 43, 43)
-                .addComponent(empProfile_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(attendance_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(leave_btn))
+                .addContainerGap())
+        );
+
+        jPanel2.setBackground(new java.awt.Color(30, 43, 93));
+
+        empProfile_btn.setBackground(new java.awt.Color(30, 43, 93));
+        empProfile_btn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        empProfile_btn.setForeground(new java.awt.Color(217, 217, 217));
+        empProfile_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\profile.png")); // NOI18N
+        empProfile_btn.setText("Employee Profile");
+        empProfile_btn.setBorder(null);
+        empProfile_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
+        empProfile_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empProfile_btnActionPerformed(evt);
+            }
+        });
+
+        leave_btn.setBackground(new java.awt.Color(30, 43, 93));
+        leave_btn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        leave_btn.setForeground(new java.awt.Color(217, 217, 217));
+        leave_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\leave.png")); // NOI18N
+        leave_btn.setText("Leave Request");
+        leave_btn.setBorder(null);
+        leave_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
+        leave_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leave_btnActionPerformed(evt);
+            }
+        });
+
+        attendance_btn.setBackground(new java.awt.Color(30, 43, 93));
+        attendance_btn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        attendance_btn.setForeground(new java.awt.Color(217, 217, 217));
+        attendance_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Documents\\NetBeansProjects\\Icons\\attendance.png")); // NOI18N
+        attendance_btn.setText("Time In/ Time Out");
+        attendance_btn.setBorder(null);
+        attendance_btn.setMargin(new java.awt.Insets(2, 0, 3, 0));
+        attendance_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attendance_btnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(attendance_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                    .addComponent(empProfile_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(leave_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(empProfile_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(attendance_btn)
                 .addGap(27, 27, 27)
-                .addComponent(logOutButton)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(leave_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -294,11 +296,11 @@ public class EmployeeAccessPortal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LOGO;
     private javax.swing.JButton attendance_btn;
     private javax.swing.JLabel date;
     private javax.swing.JButton empProfile_btn;
     private javax.swing.JLabel empportal_label;
-    private javax.swing.JLabel greetings;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
