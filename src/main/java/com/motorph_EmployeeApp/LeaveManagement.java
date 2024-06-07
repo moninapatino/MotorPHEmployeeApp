@@ -23,9 +23,9 @@ public class LeaveManagement extends javax.swing.JFrame {
     ResultSet rs = null;
     PreparedStatement pst = null;
           
-    private static final String url = "jdbc:postgresql://localhost:5432/postgres";
-    private static final String user = "postgres";
-    private static final String password = "@dm1n";
+    String url = "jdbc:postgresql://localhost:5432/postgres";
+    String user = "postgres";
+    String password = "@dm1n";
     
     public LeaveManagement() {
         initComponents();
@@ -72,6 +72,7 @@ public class LeaveManagement extends javax.swing.JFrame {
             while(rs.next()){
                 Vector v=new Vector();
                 for (int i=0;i<n;i++){
+                    v.add(rs.getString("leave_num"));
                     v.add(rs.getString("employee_id"));
                     v.add(rs.getString("first_name"));
                     v.add(rs.getString("last_name"));
@@ -81,7 +82,8 @@ public class LeaveManagement extends javax.swing.JFrame {
                                     
                 }
                 leave_table.addRow(v);
-            }    
+            }
+            conn.close();
         } 
         catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -107,6 +109,7 @@ public class LeaveManagement extends javax.swing.JFrame {
             while(rs.next()){
                 Vector v=new Vector();
                 for (int i=0;i<n;i++){
+                    v.add(rs.getString("leave_num"));
                     v.add(rs.getString("employee_id"));
                     v.add(rs.getString("first_name"));
                     v.add(rs.getString("last_name"));
@@ -116,7 +119,8 @@ public class LeaveManagement extends javax.swing.JFrame {
                                     
                 }
                 leave_table.addRow(v);
-            }    
+            }
+            conn.close();
         } 
         catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -156,6 +160,9 @@ public class LeaveManagement extends javax.swing.JFrame {
         approve_rb = new javax.swing.JRadioButton();
         reject_rb = new javax.swing.JRadioButton();
         clearBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        leaveNum = new javax.swing.JLabel();
+        leaveNum_field = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -225,14 +232,14 @@ public class LeaveManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Employee ID", "First Name", "Last Name", "Date", "Leave Type", "Status"
+                "Leave No.", "Employee ID", "First Name", "Last Name", "Date", "Leave Type", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, true
+                false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -322,6 +329,24 @@ public class LeaveManagement extends javax.swing.JFrame {
             }
         });
 
+        deleteBtn.setBackground(new java.awt.Color(253, 56, 29));
+        deleteBtn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(250, 250, 255));
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
+        leaveNum.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        leaveNum.setForeground(new java.awt.Color(250, 250, 255));
+        leaveNum.setText("Leave No. :");
+
+        leaveNum_field.setBackground(new java.awt.Color(250, 250, 255));
+        leaveNum_field.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        leaveNum_field.setForeground(new java.awt.Color(92, 101, 138));
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -342,8 +367,11 @@ public class LeaveManagement extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(backButton))
                             .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(updateBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
+                                .addComponent(deleteBtn)
+                                .addGap(17, 17, 17)
                                 .addComponent(clearBtn)))))
                 .addGap(23, 23, 23))
             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -378,7 +406,13 @@ public class LeaveManagement extends javax.swing.JFrame {
                             .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addComponent(approve_rb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(reject_rb)))))
+                                .addComponent(reject_rb))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(leaveNum)
+                        .addGap(39, 39, 39)
+                        .addComponent(leaveNum_field, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
@@ -387,7 +421,11 @@ public class LeaveManagement extends javax.swing.JFrame {
                 .addComponent(darkbluepanel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(greetings)
-                .addGap(36, 36, 36)
+                .addGap(8, 8, 8)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(leaveNum)
+                    .addComponent(leaveNum_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noe_title1)
                     .addComponent(id_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -411,7 +449,8 @@ public class LeaveManagement extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(updateBtn)
-                            .addComponent(clearBtn))
+                            .addComponent(clearBtn)
+                            .addComponent(deleteBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
@@ -463,9 +502,9 @@ public class LeaveManagement extends javax.swing.JFrame {
             
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url,user,password);
-            pst=conn.prepareStatement("UPDATE public.leave_record SET status ='"+status+"' WHERE employee_id =?");
+            pst=conn.prepareStatement("UPDATE public.leave_record SET status ='"+status+"' WHERE leave_num =?");
             
-            pst.setString(1, id_field.getText());
+            pst.setString(1, leaveNum_field.getText());
             pst.execute();
             
             
@@ -487,6 +526,7 @@ public class LeaveManagement extends javax.swing.JFrame {
                 }        
                 
             JOptionPane.showMessageDialog(this, "Leave Record Updated!");
+            conn.close();
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
@@ -501,12 +541,13 @@ public class LeaveManagement extends javax.swing.JFrame {
         int i = leaveTable.getSelectedRow();
         
         try {
-            id_field.setText(leaveRecord1.getValueAt(i, 0) .toString());
-            firstName_field.setText(leaveRecord1.getValueAt(i, 1) .toString());
-            lastName_field.setText(leaveRecord1.getValueAt(i, 2) .toString());
-            date_field.setText(leaveRecord1.getValueAt(i, 3) .toString());
-            leaveType_field.setText(leaveRecord1.getValueAt(i, 4) .toString());
-            String statusRB = leaveRecord1.getValueAt(i, 5) .toString();
+            leaveNum_field.setText(leaveRecord1.getValueAt(i, 0) .toString());
+            id_field.setText(leaveRecord1.getValueAt(i, 1) .toString());
+            firstName_field.setText(leaveRecord1.getValueAt(i, 2) .toString());
+            lastName_field.setText(leaveRecord1.getValueAt(i, 3) .toString());
+            date_field.setText(leaveRecord1.getValueAt(i, 4) .toString());
+            leaveType_field.setText(leaveRecord1.getValueAt(i, 5) .toString());
+            String statusRB = leaveRecord1.getValueAt(i, 6) .toString();
             if (statusRB.equals("Approved")){
                 approve_rb.setSelected(true);
                 reject_rb.setSelected(false);
@@ -527,6 +568,7 @@ public class LeaveManagement extends javax.swing.JFrame {
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         // Clear Textfield
+        leaveNum_field.setText("");
         id_field.setText("");
         firstName_field.setText("");
         lastName_field.setText("");
@@ -536,6 +578,28 @@ public class LeaveManagement extends javax.swing.JFrame {
         reject_rb.setSelected(false);
         
     }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // DELETE RECORD
+                
+        try {
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(url,user,password);
+            pst=conn.prepareStatement("DELETE FROM public.leave_record WHERE leave_num =?");
+                    
+            pst.setString(1, leaveNum_field.getText());
+            pst.execute();
+            
+            JOptionPane.showMessageDialog(null, "Selected Record Deleted");
+            conn.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        refreshList();
+
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -579,6 +643,7 @@ public class LeaveManagement extends javax.swing.JFrame {
     private javax.swing.JPanel darkbluepanel;
     private javax.swing.JLabel date;
     private javax.swing.JTextField date_field;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JTextField firstName_field;
     private javax.swing.JLabel greetings;
     private javax.swing.JTextField id_field;
@@ -589,6 +654,8 @@ public class LeaveManagement extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_lastName;
     private javax.swing.JLabel lbl_leaveType;
     private javax.swing.JLabel lbl_status;
+    private javax.swing.JLabel leaveNum;
+    private javax.swing.JTextField leaveNum_field;
     private javax.swing.JTable leaveTable;
     private javax.swing.JTextField leaveType_field;
     private javax.swing.JLabel leave_title;

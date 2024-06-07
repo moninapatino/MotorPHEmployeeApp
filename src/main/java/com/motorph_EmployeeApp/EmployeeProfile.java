@@ -92,6 +92,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
         addBtn = new javax.swing.JButton();
         address_title = new javax.swing.JLabel();
         address_field = new javax.swing.JTextField();
+        deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -293,6 +294,16 @@ public class EmployeeProfile extends javax.swing.JFrame {
         address_field.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         address_field.setForeground(new java.awt.Color(92, 101, 138));
 
+        deleteBtn.setBackground(new java.awt.Color(253, 56, 29));
+        deleteBtn.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(250, 250, 255));
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -357,14 +368,14 @@ public class EmployeeProfile extends javax.swing.JFrame {
                                         .addComponent(contact_field)
                                         .addComponent(jobTitle_field)
                                         .addComponent(status_field, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(backButton)
-                                                .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(9, 9, 9)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(backButton)
+                                            .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(9, 9, 9))))
                             .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGap(11, 11, 11)
                                 .addComponent(greetings)
@@ -424,9 +435,9 @@ public class EmployeeProfile extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(updateBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clearButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(backButton))
+                        .addComponent(deleteBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearButton))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -450,7 +461,9 @@ public class EmployeeProfile extends javax.swing.JFrame {
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tin_title)
                             .addComponent(tin_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(backButton)
+                .addGap(11, 11, 11)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date)
                     .addComponent(time))
@@ -602,7 +615,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
             String empNo = employeeNumber_field.getText();
             String firstName = name_field.getText();
             String lastName = name_field1.getText();
-            String birthDay = name_field1.getText();
+            String birthDay = bday_field.getText();
             String address = address_field.getText();
             String phoneNumber = contact_field.getText();
             String status = status_field.getText();
@@ -641,6 +654,25 @@ public class EmployeeProfile extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // DELETE RECORD
+        try {
+                      
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(url,user,password);
+            pst=conn.prepareStatement("DELETE FROM public.mph_employee_data WHERE employee_id =?");
+                    
+            pst.setString(1, employeeNumber_field.getText());
+            pst.execute();
+                    
+            JOptionPane.showMessageDialog(this, "Employee Profile Deleted!");
+            conn.close();
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -694,6 +726,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
     private javax.swing.JLabel cn_title;
     private javax.swing.JTextField contact_field;
     private javax.swing.JLabel date;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JTextField employeeNumber_field;
     private javax.swing.JLabel en_title;
     private javax.swing.JLabel govIdNum_title;
