@@ -50,6 +50,21 @@ public class EmployeeProfile extends javax.swing.JFrame {
     LocalDateTime now =LocalDateTime.now();
     date.setText(dates.format(now));
     }
+      public final void clear(){
+      // Clear data from textbox
+        employeeNumber_field.setText("");
+        name_field.setText("");
+        name_field1.setText("");
+        bday_field.setText("");
+        address_field.setText("");
+        contact_field.setText("");
+        status_field.setText("");
+        jobTitle_field.setText("");
+        sss_field.setText("");
+        phhealth_field.setText("");
+        pagibig_field.setText("");
+        tin_field.setText("");    
+      }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -496,20 +511,7 @@ public class EmployeeProfile extends javax.swing.JFrame {
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         
-        // Clear data from textbox
-        employeeNumber_field.setText("");
-        name_field.setText("");
-        name_field1.setText("");
-        bday_field.setText("");
-        address_field.setText("");
-        contact_field.setText("");
-        status_field.setText("");
-        jobTitle_field.setText("");
-        sss_field.setText("");
-        phhealth_field.setText("");
-        pagibig_field.setText("");
-        tin_field.setText("");
-                
+        clear();   
     
     }//GEN-LAST:event_clearButtonActionPerformed
 
@@ -593,6 +595,8 @@ public class EmployeeProfile extends javax.swing.JFrame {
             String position = jobTitle_field.getText();
             String status = status_field.getText();
             
+            int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to update this?", "Employee Profile Updating...", JOptionPane.YES_NO_OPTION);
+            if (result == JOptionPane.YES_OPTION){
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url,user,password);
             pst=conn.prepareStatement("UPDATE public.mph_employee_data SET last_name ='"+lastName+"', phone_number ='"+phoneNumber+"', position ='"+position+"', "
@@ -601,8 +605,10 @@ public class EmployeeProfile extends javax.swing.JFrame {
             pst.setString(1, employeeNumber_field.getText());
             pst.execute();
                     
-            JOptionPane.showMessageDialog(this, "Employee Profile Updated!");
-            conn.close();
+            JOptionPane.showMessageDialog(this, "Data successfully updated!");
+            } else if (result == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(this, "Data not successfully updated!");
+            }conn.close();
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
@@ -649,6 +655,8 @@ public class EmployeeProfile extends javax.swing.JFrame {
                     
             JOptionPane.showMessageDialog(this, "Employee Profile Added!");
             conn.close();
+            
+            clear();  
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
@@ -658,15 +666,21 @@ public class EmployeeProfile extends javax.swing.JFrame {
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // DELETE RECORD
         try {
-                      
+            int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to delete this?", "Employee Profile Deleting...", JOptionPane.YES_NO_OPTION);
+            if (result == JOptionPane.YES_OPTION){
+                   
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url,user,password);
             pst=conn.prepareStatement("DELETE FROM public.mph_employee_data WHERE employee_id =?");
                     
             pst.setString(1, employeeNumber_field.getText());
             pst.execute();
-                    
-            JOptionPane.showMessageDialog(this, "Employee Profile Deleted!");
+            JOptionPane.showMessageDialog(this, "Employee Profile Deleted!");    
+            clear();  
+                  
+            } else if (result == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(this, "Employee Profile Deletion Not Successful!");
+            }           
             conn.close();
         } 
         catch (Exception e) {
