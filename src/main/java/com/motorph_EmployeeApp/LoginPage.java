@@ -35,8 +35,6 @@ public class LoginPage extends javax.swing.JFrame {
         conn = Postgresql.java_db();
     }
     
-   
-
   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

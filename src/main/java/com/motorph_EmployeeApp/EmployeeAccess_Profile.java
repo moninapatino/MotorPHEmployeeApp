@@ -53,7 +53,8 @@ public class EmployeeAccess_Profile extends javax.swing.JFrame {
     LocalDateTime now =LocalDateTime.now();
     date.setText(dates.format(now));
     }
-     
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

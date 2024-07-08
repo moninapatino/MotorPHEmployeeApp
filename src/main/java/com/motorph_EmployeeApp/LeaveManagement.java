@@ -55,6 +55,18 @@ public class LeaveManagement extends javax.swing.JFrame {
     date.setText(dates.format(now));
     }
     
+      public void clear(){
+        leaveNum_field.setText("");
+        id_field.setText("");
+        firstName_field.setText("");
+        lastName_field.setText("");
+        date_field.setText("");
+        leaveType_field.setText("");
+        approve_rb.setSelected(false);
+        reject_rb.setSelected(false);
+    }
+      
+      
     public ArrayList userList() {
         ArrayList userList = new ArrayList();
         try {
@@ -568,21 +580,17 @@ public class LeaveManagement extends javax.swing.JFrame {
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         // Clear Textfield
-        leaveNum_field.setText("");
-        id_field.setText("");
-        firstName_field.setText("");
-        lastName_field.setText("");
-        date_field.setText("");
-        leaveType_field.setText("");
-        approve_rb.setSelected(false);
-        reject_rb.setSelected(false);
-        
+        clear();
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // DELETE RECORD
                 
         try {
+            int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to delete this?", "Employee Profile Deleting...", JOptionPane.YES_NO_OPTION);
+            if (result == JOptionPane.YES_OPTION){
+                
+            
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url,user,password);
             pst=conn.prepareStatement("DELETE FROM public.leave_record WHERE leave_num =?");
@@ -591,6 +599,12 @@ public class LeaveManagement extends javax.swing.JFrame {
             pst.execute();
             
             JOptionPane.showMessageDialog(null, "Selected Record Deleted");
+            clear();
+            
+            } else if (result == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(this, "Employee Profile Deletion Not Successful!");
+            }      
+            
             conn.close();
 
         } catch (Exception e) {
